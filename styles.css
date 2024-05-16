@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'PressStart2P-Regular';
-    src: url('/fonts/press-start-2p/PressStart2P-Regular.ttf') format('ttf');
+    src: url('https://github.com/CelestialInsomniac/DIDES-EEAAO/fonts/press-start-2p/PressStart2P-Regular.ttf') format('ttf');
 }
 
 /* Verwende die Schriftart in deinem CSS */
