@@ -1,11 +1,5 @@
-@font-face {
-    font-family: 'PressStart2P-Regular';
-    src: url('https://github.com/CelestialInsomniac/DIDES-EEAAO/blob/fe688c944ca15d7068122ebae55c2fb5b54078da/fonts/press-start-2p/PressStart2P-Regular.ttf') format('ttf');
-}
-
-/* Verwende die Schriftart in deinem CSS */
 body {
-    font-family: 'PressStart2P-Regular';
+    font-family: 'Forum';
 }
 
 .forum-regular {
