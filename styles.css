@@ -7,3 +7,10 @@
 body {
     font-family: 'PressStart2P-Regular';
 }
+
+.forum-regular {
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
