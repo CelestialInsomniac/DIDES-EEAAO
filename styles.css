@@ -7,3 +7,9 @@ body {
     font-weight: 400;
     font-style: normal;
 }
+
+/** Leaflet CSS **/
+#map {
+    height: 400px;
+    width: 600px;
+}
