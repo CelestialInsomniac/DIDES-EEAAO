@@ -17,3 +17,29 @@ body,
     height: 100%;
     width: 100vw;
 }
+
+
+
+
+/*TEST für Popup*/
+.custom-popup .leaflet-popup-content-wrapper {
+    background-color: #1F2227;
+    /* Beispiel: Gelbe Hintergrundfarbe */
+    color: #ffffff;
+    /* Beispiel: Schwarzer Text */
+    border-radius: 0;
+    /* Optional: Rundungen entfernen */
+}
+
+.custom-popup .leaflet-popup-tip {
+    background-color: #1F2227;
+    /* Beispiel: Gelbe Hintergrundfarbe */
+}
+
+.custom-popup .leaflet-popup-content {
+    margin: 12;
+    padding: 12;
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-style: normal;
+}
