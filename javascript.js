@@ -1,9 +1,22 @@
-/* Leaflet JS */
-var map = L.map('map').setView([51.505, -0.09], 13);
-/* setView() method sets the view of the map (geographical center and zoom) */
-/* The first parameter is the geographical center of the map - [51.505, -0.09] */
-/* The second parameter is the zoom level - 13 */
+/* LEAFLET JS */
+var map = L.map('map', {
+    crs: L.CRS.Simple,
+    minZoom: -5
+});
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-}).addTo(map);
+var bounds = [[0, 0], [1500, 1500]];
+var image = L.imageOverlay('images/test_leaflet map V1.0/Background_V1.png', bounds).addTo(map);
+
+// Fit the map to the bounds of the image
+map.fitBounds(bounds);
+
+// Set the initial view to center of the image
+map.setView([750, 750], 1);
+
+// Marker 1
+var point1 = L.latLng([703, 600]);  // Adjust coordinates to be within bounds
+L.marker(point1).addTo(map).bindPopup('This is a test popup - point1').openPopup;
+
+// Marker 2
+var point2 = L.latLng([903, 778]);  // Adjust coordinates to be within bounds
+L.marker(point2).addTo(map).bindPopup('This is a test popup - point2').openPopup;

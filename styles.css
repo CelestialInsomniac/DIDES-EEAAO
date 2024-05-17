@@ -1,5 +1,7 @@
 body {
     font-family: 'Forum';
+    padding: 0;
+    margin: 0;
 }
 
 .forum-regular {
@@ -9,7 +11,9 @@ body {
 }
 
 /** Leaflet CSS **/
-#map {
-    height: 400px;
-    width: 600px;
+html, body, #map {
+    height: 100%;
+    width: 100vw;
 }
+
+
