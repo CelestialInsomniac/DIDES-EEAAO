@@ -201,6 +201,16 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
     for (var i = 0; i < buttons.length; i++) {
         buttons[i].disabled = true;
     }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 2
+    if (questionId === 'frage2') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = document.createElement('img');
+        additionalImage.src = 'fragen/quizmap v.1/bilder/Data aus Die Goonies.jpg';
+        additionalImage.style.width = '50%';
+        additionalImage.style.height = 'auto';
+        popupContent.appendChild(additionalImage);
+    }
 }
 
 function displayStoredAnswer(questionId, correctAnswerIndex) {
