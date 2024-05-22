@@ -5,14 +5,14 @@ var map = L.map('map', {
 });
 
 var ring = L.icon({
-    iconUrl: '/fragen/quizmap v.1/icons/icon_ring.png',
+    iconUrl: 'fragen/quizmap v.1/icons/icon_ring.png',
     iconSize: [120, 120],
     iconAnchor: [60, 60],
     popupAnchor: [-3, -76]
 });
 
 var bounds = [[0, 0], [1500, 1500]];
-var image = L.imageOverlay('/fragen/quizmap v.1/background/Background_V1.png', bounds).addTo(map);
+var image = L.imageOverlay('fragen/quizmap v.1/background/Background_V1.png', bounds).addTo(map);
 
 // Fit the map to the bounds of the image
 map.fitBounds(bounds);
