@@ -4,12 +4,6 @@ body {
     margin: 0;
 }
 
-.forum-regular {
-    font-family: "Forum", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
 /** Leaflet CSS **/
 html,
 body,
@@ -18,22 +12,39 @@ body,
     width: 100vw;
 }
 
+#score {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: #fff;
+    padding: 10px;
+    z-index: 1000;
+}
+
+#bagel {
+    position: fixed;
+    top: 15px;
+    right: 50px;
+    width: 40px;
+    height: 40px;
+    z-index: 1000;
+}
 
 
+.forum-regular {
+    font-family: "Forum", serif;
+    font-weight: 400;
+    font-style: normal;
+}
 
-/*TEST für Popup*/
 .custom-popup .leaflet-popup-content-wrapper {
     background-color: #1F2227;
-    /* Beispiel: Gelbe Hintergrundfarbe */
     color: #ffffff;
-    /* Beispiel: Schwarzer Text */
-    border-radius: 0;
-    /* Optional: Rundungen entfernen */
 }
 
 .custom-popup .leaflet-popup-tip {
     background-color: #1F2227;
-    /* Beispiel: Gelbe Hintergrundfarbe */
 }
 
 .custom-popup .leaflet-popup-content {
