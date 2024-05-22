@@ -118,7 +118,7 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
     if (questionId === 'frage2') {
         var popupContent = document.querySelector(`#quiz-${questionId}`);
         var additionalImage = popupContent.querySelector('.additional-image');
-        
+
         if (!additionalImage) {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/Data aus Die Goonies.jpg';
@@ -165,6 +165,22 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
             popupContent.appendChild(additionalImage);
         }
     }
+
+        // Zusätzliches Bild im Popup anzeigen, nur für Frage 3
+        if (questionId === 'frage3') {
+            var popupContent = document.querySelector(`#quiz-${questionId}`);
+            var additionalImage = popupContent.querySelector('.additional-image');
+    
+            if (!additionalImage) {
+                additionalImage = document.createElement('img');
+                additionalImage.src = 'fragen/quizmap v.1/bilder/SpaceOdyssey.jpg';
+                additionalImage.style.width = '50%';
+                additionalImage.style.height = 'auto';
+                additionalImage.style.marginTop = '100px';
+                additionalImage.classList.add('additional-image');
+                popupContent.appendChild(additionalImage);
+            }
+        }
 }
 
 // Funktion Quizmarker mit Sound
@@ -184,7 +200,6 @@ function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, ima
         .bindPopup(quizContent, {
             className: 'custom-popup'
         });
-
     marker.on('popupopen', function () {
         if (sessionStorage.getItem('quiz-' + questionId) !== null) {
             displayStoredAnswer(questionId, correctAnswerIndex);
@@ -199,24 +214,10 @@ function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, ima
                 handleAnswer(`answer3-${questionId}`, correctAnswerIndex === 2, correctAnswerIndex, questionId);
             });
         }
-
         document.getElementById(`sound-${questionId}`).addEventListener('click', function () {
             var audio = new Audio(soundUrl);
             audio.play();
         });
-
-        var popupContent = document.querySelector(`#quiz-${questionId}`);
-        var additionalImage = popupContent.querySelector('.additional-image');
-
-        // Überprüfen, ob das zusätzliche Bild bereits hinzugefügt wurde
-        if (questionId === 'frage2' && !additionalImage && sessionStorage.getItem('additionalImageAdded-' + questionId) === 'true') {
-            additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/Data aus Die Goonies.jpg';
-            additionalImage.style.width = '50%';
-            additionalImage.style.height = 'auto';
-            additionalImage.classList.add('additional-image');
-            popupContent.appendChild(additionalImage);
-        }
     });
 }
 
