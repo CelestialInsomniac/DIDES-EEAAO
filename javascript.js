@@ -43,8 +43,9 @@ function updateScore() {
     scoreElement.innerText = score;
 }
 
-// Funktion Quizmarker hinzufügen
-function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId, soundUrl) {
+
+// Funktion Quizmarker mit Sound hinzufügen
+function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId, soundUrl) {
     var quizContent = `
         <div id="quiz-${questionId}">
             <img src="${imageUrl}" alt="Quiz Image" style="width: 100%; height: auto;">
@@ -89,6 +90,54 @@ function playSound(soundUrl) {
     audio.play();
 }
 
+addQuizMarkerSound(703, 600, 'Zu welchem Game gehört dieser Soundeffekt?', ['Super Smash Bros.', 'Metroid', 'Metal Gear Solid'], 0, 'fragen/quizmap v.1/bilder/Frage1.png', 'frage1', 'fragen/quizmap v.1/audio/SuperSmashBros.mp3');
+
+
+
+
+
+
+
+
+// Funktion Quizmarker hinzufügen
+function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId) {
+    var quizContent = `
+        <div id="quiz-${questionId}">
+            <img src="${imageUrl}" alt="Quiz Image" style="width: 100%; height: auto;">
+            <p>${question}</p>
+            <button id="answer1-${questionId}" class="answer">${answers[0]}</button>
+            <button id="answer2-${questionId}" class="answer">${answers[1]}</button>
+            <button id="answer3-${questionId}" class="answer">${answers[2]}</button>
+        </div>
+    `;
+
+    var marker = L.marker([lat, lng], { icon: ring }).addTo(map)
+        .bindPopup(quizContent, {
+            className: 'custom-popup'
+        });
+
+    marker.on('popupopen', function () {
+        if (sessionStorage.getItem('quiz-' + questionId) !== null) {
+            displayStoredAnswer(questionId, correctAnswerIndex);
+        } else {
+            document.getElementById(`answer1-${questionId}`).addEventListener('click', function () {
+                handleAnswer(`answer1-${questionId}`, correctAnswerIndex === 0, correctAnswerIndex, questionId);
+            });
+            document.getElementById(`answer2-${questionId}`).addEventListener('click', function () {
+                handleAnswer(`answer2-${questionId}`, correctAnswerIndex === 1, correctAnswerIndex, questionId);
+            });
+            document.getElementById(`answer3-${questionId}`).addEventListener('click', function () {
+                handleAnswer(`answer3-${questionId}`, correctAnswerIndex === 2, correctAnswerIndex, questionId);
+            });
+        }
+    });
+}
+
+addQuizMarker(525, 820, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Penny aus Inspector Gadget ', 'Peter aus Ghostbusters'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage2');
+addQuizMarker(390, 1273, 'Aus welchem Film stammt diese Szene ursprünglich?', ['2001: Odyssee im Weltraum', 'Planet der Affen', 'King Kong'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage3');
+
+
+
 function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId) {
     var selectedAnswer = document.getElementById(selectedAnswerId);
     var correctAnswer = document.querySelectorAll(`#quiz-${questionId} .answer`)[correctAnswerIndex];
@@ -129,8 +178,3 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
         buttons[i].disabled = true;
     }
 }
-
-// Quizmarkers
-addQuizMarker(703, 600, 'Zu welchem Game gehört dieser Soundeffekt?', ['Super Smash Bros.', 'Metroid', 'Metal Gear Solid'], 0, 'fragen/quizmap v.1/bilder/Frage1.png', 'frage1', 'fragen/quizmap v.1/audio/SuperSmashBros.mp3');
-addQuizMarker(525, 820, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Penny aus Inspector Gadget ', 'Peter aus Ghostbusters'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage2');
-addQuizMarker(390, 1273, 'Aus welchem Film stammt diese Szene ursprünglich?', ['2001: Odyssee im Weltraum', 'Planet der Affen', 'King Kong'], 0, 'fragen/quizmap v.1/bilder/Frage3.png', 'frage3');
