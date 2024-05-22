@@ -5,14 +5,14 @@ var map = L.map('map', {
 });
 
 var ring = L.icon({
-    iconUrl: 'images/test_leaflet map V1.0/icons/icon_ring.png',
+    iconUrl: '/fragen/quizmap v.1/icons/icon_ring.png',
     iconSize: [120, 120],
     iconAnchor: [60, 60],
     popupAnchor: [-3, -76]
 });
 
 var bounds = [[0, 0], [1500, 1500]];
-var image = L.imageOverlay('images/test_leaflet map V1.0/Background_V1.png', bounds).addTo(map);
+var image = L.imageOverlay('/fragen/quizmap v.1/background/Background_V1.png', bounds).addTo(map);
 
 // Fit the map to the bounds of the image
 map.fitBounds(bounds);
@@ -21,7 +21,7 @@ map.fitBounds(bounds);
 map.setView([750, 750], 1);
 
 // Infomarker
-var customPopupInfo = "<div class='custom-popup'>Wie wird gespielt? \r \n Ziehe die Netzwerkkarte. Wenn du einen Knotenpunkt anklickst, erscheint ein Quizfenster. Errate die richtige Antwort und sammle so viele Bagels wie möglich! \r Wenn du die Seite neu lädst, verlierst du deine Bagels.</div>";
+var customPopupInfo = "<div class='custom-popup'>Wie wird gespielt? \r \n Ziehe an der Netzwerkkarte. Wenn du einen der Knotenpunkte antippst, erscheint ein Quizfenster. Errate die richtigen Antworten und sammle so viele Bagels wie möglich! \r Wenn du die Seite schliesst, verlierst du deine Bagels.</div>";
 
 L.marker([910, 780], { icon: ring }).addTo(map).bindPopup(customPopupInfo, {
     className: 'custom-popup'
@@ -44,7 +44,7 @@ function updateScore() {
 }
 
 // Funktion Quizmarker hinzufügen
-function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId) {
+function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId, soundUrl) {
     var quizContent = `
         <div id="quiz-${questionId}">
             <img src="${imageUrl}" alt="Quiz Image" style="width: 100%; height: auto;">
@@ -52,6 +52,7 @@ function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl
             <button id="answer1-${questionId}" class="answer">${answers[0]}</button>
             <button id="answer2-${questionId}" class="answer">${answers[1]}</button>
             <button id="answer3-${questionId}" class="answer">${answers[2]}</button>
+            <button id="sound-${questionId}" class="sound">Sound abspielen</button>
         </div>
     `;
 
@@ -73,8 +74,19 @@ function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl
             document.getElementById(`answer3-${questionId}`).addEventListener('click', function () {
                 handleAnswer(`answer3-${questionId}`, correctAnswerIndex === 2, correctAnswerIndex, questionId);
             });
+
+            // Hinzufügen von Eventlistener für Soundbutton
+            document.getElementById(`sound-${questionId}`).addEventListener('click', function () {
+                playSound(soundUrl);
+            });
         }
     });
+}
+
+// Funktion zum Abspielen des Sounds
+function playSound(soundUrl) {
+    var audio = new Audio(soundUrl);
+    audio.play();
 }
 
 function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId) {
@@ -119,6 +131,6 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
 }
 
 // Quizmarkers
-addQuizMarker(703, 600, 'Zu welchem Game gehört dieser Soundeffekt?', ['Super Smash Bros.', 'Metroid', 'Metal Gear Solid'], 0, 'images/test_leaflet map V1.0/fragen/Frage1.png', 'frage1');
-addQuizMarker(525, 820, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Penny aus Inspector Gadget ', 'Peter aus Ghostbusters'], 0, 'images/test_leaflet map V1.0/fragen/Frage2.png', 'frage2');
-addQuizMarker(390, 1273, 'Aus welchem Film stammt diese Szene ursprünglich?', ['2001: Odyssee im Weltraum', 'Planet der Affen', 'King Kong'], 0, 'images/test_leaflet map V1.0/fragen/Frage3.png', 'frage3');
+addQuizMarker(703, 600, 'Zu welchem Game gehört dieser Soundeffekt?', ['Super Smash Bros.', 'Metroid', 'Metal Gear Solid'], 0, 'fragen/quizmap v.1/bilder/Frage1.png', 'frage1', 'fragen/quizmap v.1/audio/SuperSmashBros.mp3');
+addQuizMarker(525, 820, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Penny aus Inspector Gadget ', 'Peter aus Ghostbusters'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage2');
+addQuizMarker(390, 1273, 'Aus welchem Film stammt diese Szene ursprünglich?', ['2001: Odyssee im Weltraum', 'Planet der Affen', 'King Kong'], 0, 'fragen/quizmap v.1/bilder/Frage3.png', 'frage3');
