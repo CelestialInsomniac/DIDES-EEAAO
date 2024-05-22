@@ -44,7 +44,7 @@ function updateScore() {
 }
 
 
-// Funktion Quizmarker mit Sound hinzufügen
+// Funktion Quizmarker mit Sound
 function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId, soundUrl) {
     var quizContent = `
         <div id="quiz-${questionId}">
@@ -93,13 +93,57 @@ function playSound(soundUrl) {
 addQuizMarkerSound(703, 600, 'Zu welchem Game gehört dieser Soundeffekt?', ['Super Smash Bros.', 'Metroid', 'Metal Gear Solid'], 0, 'fragen/quizmap v.1/bilder/Frage1.png', 'frage1', 'fragen/quizmap v.1/audio/SuperSmashBros.mp3');
 
 
+// Funktion Quizmarker mit Video
+function addQuizMarkerVideo(lat, lng, question, answers, correctAnswerIndex, videoUrl, questionId) {
+    var quizContent = `
+        <div id="quiz-${questionId}">
+            <video id="video-${questionId}" controls style="width: 100%; height: auto;">
+                <source src="${videoUrl}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>${question}</p>
+            <button id="answer1-${questionId}" class="answer">${answers[0]}</button>
+            <button id="answer2-${questionId}" class="answer">${answers[1]}</button>
+            <button id="answer3-${questionId}" class="answer">${answers[2]}</button>
+        </div>
+    `;
+
+    var marker = L.marker([lat, lng], { icon: ring }).addTo(map)
+        .bindPopup(quizContent, {
+            className: 'custom-popup'
+        });
+
+    marker.on('popupopen', function () {
+        if (sessionStorage.getItem('quiz-' + questionId) !== null) {
+            displayStoredAnswer(questionId, correctAnswerIndex);
+        } else {
+            document.getElementById(`answer1-${questionId}`).addEventListener('click', function () {
+                handleAnswer(`answer1-${questionId}`, correctAnswerIndex === 0, correctAnswerIndex, questionId);
+            });
+            document.getElementById(`answer2-${questionId}`).addEventListener('click', function () {
+                handleAnswer(`answer2-${questionId}`, correctAnswerIndex === 1, correctAnswerIndex, questionId);
+            });
+            document.getElementById(`answer3-${questionId}`).addEventListener('click', function () {
+                handleAnswer(`answer3-${questionId}`, correctAnswerIndex === 2, correctAnswerIndex, questionId);
+            });
+
+            // Video-Pause-Handling
+            var video = document.getElementById(`video-${questionId}`);
+            video.addEventListener('click', function () {
+                if (video.paused) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+        }
+    });
+}
+
+addQuizMarkerVideo(390, 1273, 'Aus welchem Film stammt diese Szene ursprünglich?', ['2001: Odyssee im Weltraum', 'Planet der Affen', 'King Kong'], 0, 'fragen/quizmap v.1/video/SpaceOdyssey.mp4', 'frage3');
 
 
-
-
-
-
-// Funktion Quizmarker hinzufügen
+// Funktion Quizmarker Standard
 function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId) {
     var quizContent = `
         <div id="quiz-${questionId}">
@@ -134,10 +178,9 @@ function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl
 }
 
 addQuizMarker(525, 820, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Penny aus Inspector Gadget ', 'Peter aus Ghostbusters'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage2');
-addQuizMarker(390, 1273, 'Aus welchem Film stammt diese Szene ursprünglich?', ['2001: Odyssee im Weltraum', 'Planet der Affen', 'King Kong'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage3');
 
 
-
+// Eventhandlers mit Score-Update
 function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId) {
     var selectedAnswer = document.getElementById(selectedAnswerId);
     var correctAnswer = document.querySelectorAll(`#quiz-${questionId} .answer`)[correctAnswerIndex];
