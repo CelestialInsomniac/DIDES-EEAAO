@@ -1,7 +1,10 @@
 // LEAFLET JS
 var map = L.map('map', {
     crs: L.CRS.Simple,
-    minZoom: -5
+    minZoom: -5,
+    zoomControl: false, // Entfernt die Zoom-Steuerung
+    attributionControl: false // Entfernt das Leaflet Logo unten rechts
+    
 });
 
 var ring = L.icon({
