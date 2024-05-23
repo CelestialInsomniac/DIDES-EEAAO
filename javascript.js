@@ -23,12 +23,15 @@ map.fitBounds(bounds);
 // Grundausrichtung mittig, Zoom Level 1
 map.setView([750, 750], 1);
 
+
+
 // Infomarker
 var customPopupInfo = "<div class='custom-popup'>Wie wird gespielt? \r \n Ziehe an der Netzwerkkarte. Wenn du einen der Knotenpunkte antippst, erscheint ein Quizfenster. Errate die richtigen Antworten und sammle so viele Bagels wie möglich! \r Wenn du die Seite schliesst, verlierst du deine Bagels.</div>";
 
 L.marker([910, 780], { icon: ring }).addTo(map).bindPopup(customPopupInfo, {
     className: 'custom-popup'
 }).openPopup();
+
 
 // Score-Element initialisieren
 var scoreElement = document.getElementById('score');
@@ -45,6 +48,8 @@ function updateScore() {
     score++;
     scoreElement.innerText = score;
 }
+
+
 
 // Funktion Quizmarker Standard
 function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId) {
@@ -93,7 +98,8 @@ function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl
     });
 }
 
-addQuizMarker(525, 820, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Penny aus Inspector Gadget ', 'Peter aus Ghostbusters'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage2');
+// Frage 1 - Erste Antwort ist korrekt
+addQuizMarker(525, 820, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Penny aus Inspector Gadget', 'Peter aus Ghostbusters'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage2');
 
 // Funktion zum Speichern der Antworten und Hinzufügen des zusätzlichen Bildes
 function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId) {
@@ -169,22 +175,24 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
         }
     }
 
-        // Zusätzliches Bild im Popup anzeigen, nur für Frage 3
-        if (questionId === 'frage3') {
-            var popupContent = document.querySelector(`#quiz-${questionId}`);
-            var additionalImage = popupContent.querySelector('.additional-image');
-    
-            if (!additionalImage) {
-                additionalImage = document.createElement('img');
-                additionalImage.src = 'fragen/quizmap v.1/bilder/SpaceOdyssey.jpg';
-                additionalImage.style.width = '50%';
-                additionalImage.style.height = 'auto';
-                additionalImage.style.marginTop = '100px';
-                additionalImage.classList.add('additional-image');
-                popupContent.appendChild(additionalImage);
-            }
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 3
+    if (questionId === 'frage3') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/SpaceOdyssey.jpg';
+            additionalImage.style.width = '50%';
+            additionalImage.style.height = 'auto';
+            additionalImage.style.marginTop = '100px';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
         }
+    }
 }
+
+
 
 // Funktion Quizmarker mit Sound
 function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId, soundUrl) {
@@ -224,7 +232,8 @@ function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, ima
     });
 }
 
-addQuizMarkerSound(703, 600, 'Zu welchem Game gehört dieser Soundeffekt?', ['Super Smash Bros.', 'Metroid', 'Metal Gear Solid'], 0, 'fragen/quizmap v.1/bilder/Frage1.png', 'frage1', 'fragen/quizmap v.1/audio/SuperSmashBros.mp3');
+// Frage 2 - Erste Antwort ist korrekt
+addQuizMarkerSound(703, 600, 'Zu welchem Game gehört dieser Soundeffekt?', ['Metroid', 'Super Smash Bros.', 'Metal Gear Solid'], 1, 'fragen/quizmap v.1/bilder/Frage1.png', 'frage1', 'fragen/quizmap v.1/audio/SuperSmashBros.mp3');
 
 
 // Funktion Quizmarker mit Video
@@ -274,4 +283,5 @@ function addQuizMarkerVideo(lat, lng, question, answers, correctAnswerIndex, vid
     });
 }
 
-addQuizMarkerVideo(390, 1273, 'Aus welchem Film stammt diese Szene ursprünglich?', ['2001: Odyssee im Weltraum', 'Planet der Affen', 'King Kong'], 0, 'fragen/quizmap v.1/video/SpaceOdyssey.mp4', 'frage3');
+// Frage 3 - Dritte Antwort ist korrekt
+addQuizMarkerVideo(390, 1273, 'Aus welchem Film stammt diese Szene ursprünglich?', ['King Kong', 'Planet der Affen', '2001: Odyssee im Weltraum'], 2, 'fragen/quizmap v.1/video/SpaceOdyssey.mp4', 'frage3');
