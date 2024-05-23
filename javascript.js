@@ -4,7 +4,6 @@ var map = L.map('map', {
     minZoom: -5,
     zoomControl: false, // Entfernt die Zoom-Steuerung
     attributionControl: false // Entfernt das Leaflet Logo unten rechts
-    
 });
 
 var ring = L.icon({
@@ -23,15 +22,12 @@ map.fitBounds(bounds);
 // Grundausrichtung mittig, Zoom Level 1
 map.setView([750, 750], 1);
 
-
-
 // Infomarker
 var customPopupInfo = "<div class='custom-popup'>Wie wird gespielt? \r \n Ziehe an der Netzwerkkarte. Wenn du einen der Knotenpunkte antippst, erscheint ein Quizfenster. Errate die richtigen Antworten und sammle so viele Bagels wie möglich! \r Wenn du die Seite schliesst, verlierst du deine Bagels.</div>";
 
 L.marker([910, 780], { icon: ring }).addTo(map).bindPopup(customPopupInfo, {
     className: 'custom-popup'
 }).openPopup();
-
 
 // Score-Element initialisieren
 var scoreElement = document.getElementById('score');
@@ -48,8 +44,6 @@ function updateScore() {
     score++;
     scoreElement.innerText = score;
 }
-
-
 
 // Funktion Quizmarker Standard
 function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId) {
@@ -140,6 +134,25 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
             sessionStorage.setItem('additionalImageAdded-' + questionId, 'true');
         }
     }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 3
+    if (questionId === 'frage3') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/SpaceOdyssey.jpg';
+            additionalImage.style.width = '50%';
+            additionalImage.style.height = 'auto';
+            additionalImage.style.marginTop = '100px';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
+
+            // Markiere, dass das zusätzliche Bild hinzugefügt wurde
+            sessionStorage.setItem('additionalImageAdded-' + questionId, 'true');
+        }
+    }
 }
 
 function displayStoredAnswer(questionId, correctAnswerIndex) {
@@ -192,8 +205,6 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
     }
 }
 
-
-
 // Funktion Quizmarker mit Sound
 function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId, soundUrl) {
     var quizContent = `
@@ -234,7 +245,6 @@ function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, ima
 
 // Frage 2 - Erste Antwort ist korrekt
 addQuizMarkerSound(703, 600, 'Zu welchem Game gehört dieser Soundeffekt?', ['Metroid', 'Super Smash Bros.', 'Metal Gear Solid'], 1, 'fragen/quizmap v.1/bilder/Frage1.png', 'frage1', 'fragen/quizmap v.1/audio/SuperSmashBros.mp3');
-
 
 // Funktion Quizmarker mit Video
 function addQuizMarkerVideo(lat, lng, question, answers, correctAnswerIndex, videoUrl, questionId) {
