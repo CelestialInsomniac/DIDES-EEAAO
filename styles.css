@@ -31,7 +31,6 @@ body,
     z-index: 1000;
 }
 
-
 .forum-regular {
     font-family: "Forum", serif;
     font-weight: 400;
@@ -56,4 +55,9 @@ body,
     font-size: 20px;
     font-weight: 400;
     font-style: normal;
+}
+
+/* Entfernt den Schließen-Button im Popup */
+.leaflet-popup-close-button {
+    display: none !important;
 }
