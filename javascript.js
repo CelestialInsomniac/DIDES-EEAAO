@@ -25,7 +25,7 @@ map.setView([750, 750], 1);
 // Infomarker
 var customPopupInfo = "<div class='custom-popup'>Wie wird gespielt? \r \n Ziehe an der Netzwerkkarte. Wenn du einen der Knotenpunkte antippst, erscheint ein Quizfenster. Errate die richtigen Antworten und sammle so viele Bagels wie möglich! \r Wenn du die Seite schliesst, verlierst du deine Bagels.</div>";
 
-L.marker([910, 780], { icon: ring }).addTo(map).bindPopup(customPopupInfo, {
+L.marker([819, 761.5], { icon: ring }).addTo(map).bindPopup(customPopupInfo, {
     className: 'custom-popup'
 }).openPopup();
 
@@ -93,7 +93,7 @@ function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl
 }
 
 // Frage 1 - Erste Antwort ist korrekt
-addQuizMarker(525, 820, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Penny aus Inspector Gadget', 'Peter aus Ghostbusters'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage2');
+addQuizMarker(653, 780.5, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Penny aus Inspector Gadget', 'Peter aus Ghostbusters'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage2');
 
 // Funktion zum Speichern der Antworten und Hinzufügen des zusätzlichen Bildes
 function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId) {
@@ -244,7 +244,7 @@ function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, ima
 }
 
 // Frage 2 - Erste Antwort ist korrekt
-addQuizMarkerSound(703, 600, 'Zu welchem Game gehört dieser Soundeffekt?', ['Metroid', 'Super Smash Bros.', 'Metal Gear Solid'], 1, 'fragen/quizmap v.1/bilder/Frage1.png', 'frage1', 'fragen/quizmap v.1/audio/SuperSmashBros.mp3');
+addQuizMarkerSound(730.5, 687.5, 'Zu welchem Game gehört dieser Soundeffekt?', ['Metroid', 'Super Smash Bros.', 'Metal Gear Solid'], 1, 'fragen/quizmap v.1/bilder/Frage1.png', 'frage1', 'fragen/quizmap v.1/audio/SuperSmashBros.mp3');
 
 // Funktion Quizmarker mit Video
 function addQuizMarkerVideo(lat, lng, question, answers, correctAnswerIndex, videoUrl, questionId) {
@@ -294,4 +294,4 @@ function addQuizMarkerVideo(lat, lng, question, answers, correctAnswerIndex, vid
 }
 
 // Frage 3 - Dritte Antwort ist korrekt
-addQuizMarkerVideo(390, 1273, 'Aus welchem Film stammt diese Szene ursprünglich?', ['King Kong', 'Planet der Affen', '2001: Odyssee im Weltraum'], 2, 'fragen/quizmap v.1/video/SpaceOdyssey.mp4', 'frage3');
+addQuizMarkerVideo(593, 966.5, 'Aus welchem Film stammt diese Szene ursprünglich?', ['King Kong', 'Planet der Affen', '2001: Odyssee im Weltraum'], 2, 'fragen/quizmap v.1/video/SpaceOdyssey.mp4', 'frage3');
