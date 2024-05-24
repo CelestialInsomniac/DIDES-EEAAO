@@ -93,7 +93,7 @@ function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl
 }
 
 // Frage 1 - Erste Antwort ist korrekt
-addQuizMarker(653, 780.5, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Penny aus Inspector Gadget', 'Peter aus Ghostbusters'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage2');
+addQuizMarker(653, 780.5, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Peter aus Ghostbusters', 'Penny aus Inspector Gadget'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage2');
 
 // Funktion zum Speichern der Antworten und Hinzufügen des zusätzlichen Bildes
 function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId) {
@@ -125,8 +125,7 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
         if (!additionalImage) {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/Data aus Die Goonies.jpg';
-            additionalImage.style.width = '50%';
-            additionalImage.style.height = 'auto';
+
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
 
@@ -196,8 +195,6 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
         if (!additionalImage) {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/SpaceOdyssey.jpg';
-            additionalImage.style.width = '50%';
-            additionalImage.style.height = 'auto';
             additionalImage.style.marginTop = '100px';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);

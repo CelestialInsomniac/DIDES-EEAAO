@@ -49,8 +49,8 @@ body,
 }
 
 .custom-popup .leaflet-popup-content {
-    margin: 12;
-    padding: 12;
+    margin: 12px;
+    padding: 12px;
     font-family: "Forum", serif;
     font-size: 20px;
     font-weight: 400;
@@ -60,4 +60,13 @@ body,
 /* Entfernt den Schließen-Button im Popup */
 .leaflet-popup-close-button {
     display: none !important;
+}
+
+.additional-image {
+    padding-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    height: auto;
 }
