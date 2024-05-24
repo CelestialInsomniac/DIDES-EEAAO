@@ -38,13 +38,13 @@ body,
 }
 
 .custom-popup .leaflet-popup-content-wrapper {
-    background-color: #1F2227;
+    background-color: #2A2E34;
     color: #ffffff;
     opacity: 80%;
 }
 
 .custom-popup .leaflet-popup-tip {
-    background-color: #1F2227;
+    background-color: #2A2E34;
     opacity: 80%;
 }
 

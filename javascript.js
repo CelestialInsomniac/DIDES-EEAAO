@@ -101,11 +101,11 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
     var correctAnswer = document.querySelectorAll(`#quiz-${questionId} .answer`)[correctAnswerIndex];
 
     if (isCorrect) {
-        selectedAnswer.style.backgroundColor = '#30D3B6';
+        selectedAnswer.style.backgroundColor = '#32B090';
         updateScore(); // Aktualisiere den Score bei richtiger Antwort
     } else {
-        selectedAnswer.style.backgroundColor = '#EC872A';
-        correctAnswer.style.backgroundColor = '#30D3B6';
+        selectedAnswer.style.backgroundColor = '#7E72AB';
+        correctAnswer.style.backgroundColor = '#32B090';
     }
 
     // Antworten speichern
@@ -161,10 +161,10 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
     var correctAnswer = document.querySelectorAll(`#quiz-${questionId} .answer`)[correctAnswerIndex];
 
     if (storedAnswerId === `answer${correctAnswerIndex + 1}-${questionId}`) {
-        selectedAnswer.style.backgroundColor = '#30D3B6';
+        selectedAnswer.style.backgroundColor = '#32B090';
     } else {
-        selectedAnswer.style.backgroundColor = '#EC872A';
-        correctAnswer.style.backgroundColor = '#30D3B6';
+        selectedAnswer.style.backgroundColor = '#7E72AB';
+        correctAnswer.style.backgroundColor = '#32B090';
     }
 
     // Alle Knöpfe deaktivieren
