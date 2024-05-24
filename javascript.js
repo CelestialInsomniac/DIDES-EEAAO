@@ -6,13 +6,6 @@ var map = L.map('map', {
     attributionControl: false // Entfernt das Leaflet Logo unten rechts
 });
 
-var ring = L.icon({
-    iconUrl: 'fragen/quizmap v.1/icons/icon_ring.png',
-    iconSize: [120, 120],
-    iconAnchor: [60, 60],
-    popupAnchor: [-3, -76]
-});
-
 var bounds = [[0, 0], [1500, 1500]];
 var image = L.imageOverlay('fragen/quizmap v.1/background/Background_V1.png', bounds).addTo(map);
 
@@ -23,11 +16,18 @@ map.fitBounds(bounds);
 map.setView([750, 750], 1);
 
 // Infomarker
-var customPopupInfo = "<div class='custom-popup'>Everything Everywhere All at Once </br> Kennst du alle Filmreferenzen? </br></br> Wie wird gespielt? </br> </br> Ziehe an der Netzwerkkarte. Wenn du einen der Knotenpunkte antippst, erscheint ein Quizfenster. Errate die richtigen Antworten und sammle so viele Bagels wie möglich! </br> </br> Wenn du die Seite schliesst, verlierst du deine Bagels.</div>";
+var customPopupInfo = "<div class='custom-popup'>Wie wird gespielt? \r \n Ziehe an der Netzwerkkarte. Wenn du einen der Knotenpunkte antippst, erscheint ein Quizfenster. Errate die richtigen Antworten und sammle so viele Bagels wie möglich! \r Wenn du die Seite schliesst, verlierst du deine Bagels.</div>";
 
-L.marker([819, 761.5], { icon: ring }).addTo(map).bindPopup(customPopupInfo, {
+// Einen benutzerdefinierten Marker hinzufügen
+L.marker([819, 761.5], {
+    icon: L.divIcon({
+        className: 'custom-marker', // Verweise auf die definierte CSS-Klasse
+        html: '<img src="fragen/quizmap v.1/icons/icon_ring.png" alt="Ring Icon" style="width:100%;height:100%;">' // HTML für den Marker
+    })
+}).addTo(map).bindPopup(customPopupInfo, {
     className: 'custom-popup'
-})
+});
+
 
 // Score-Element initialisieren
 var scoreElement = document.getElementById('score');
