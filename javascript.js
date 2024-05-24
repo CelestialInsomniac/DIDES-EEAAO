@@ -144,7 +144,6 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
             additionalImage.src = 'fragen/quizmap v.1/bilder/SpaceOdyssey.jpg';
             additionalImage.style.width = '50%';
             additionalImage.style.height = 'auto';
-            additionalImage.style.marginTop = '100px';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
 
@@ -195,7 +194,6 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
         if (!additionalImage) {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/SpaceOdyssey.jpg';
-            additionalImage.style.marginTop = '100px';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
         }
