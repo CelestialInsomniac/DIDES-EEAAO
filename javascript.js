@@ -267,6 +267,7 @@ function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, ima
         document.getElementById(`sound-${questionId}`).addEventListener('click', function () {
             var audio = new Audio(soundUrl);
             audio.play();
+            audio.volume = 0.3;
         });
     });
 }
