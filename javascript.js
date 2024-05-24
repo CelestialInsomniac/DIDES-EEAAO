@@ -25,6 +25,13 @@ var completedIcon = L.icon({
     popupAnchor: [-3, -76],
 });
 
+var wrongIcon = L.icon({
+    iconUrl: 'fragen/quizmap v.1/icons/icon_ring_wrong.png',
+    iconSize: [120, 120],
+    iconAnchor: [60, 60],
+    popupAnchor: [-3, -76],
+});
+
 var bounds = [[0, 0], [1500, 1500]];
 var image = L.imageOverlay('fragen/quizmap v.1/background/Background_V1.png', bounds).addTo(map);
 
@@ -58,9 +65,13 @@ function updateScore() {
 }
 
 //ÄNDERUNG
-// Funktion zum Aktualisieren des Marker-Icons
-function updateMarkerIcon(marker, icon) {
-    marker.setIcon(icon);
+// Funktion zum Aktualisieren des Marker-Icons je nach Antwort
+function updateMarkerIcon(marker, isCorrect) {
+    if (isCorrect) {
+        marker.setIcon(completedIcon); // Icon für richtige Antwort verwenden
+    } else {
+        marker.setIcon(wrongIcon); // Icon für falsche Antwort verwenden
+    }
 }
 
 // Funktion Quizmarker Standard
@@ -172,7 +183,7 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
 
     //ÄNDERUNG
     // Update the marker icon after answering the question
-    updateMarkerIcon(marker, completedIcon);
+    updateMarkerIcon(marker, isCorrect);
 }
 
 function displayStoredAnswer(questionId, correctAnswerIndex) {
