@@ -27,7 +27,7 @@ var customPopupInfo = "<div class='custom-popup'>Wie wird gespielt? \r \n Ziehe 
 
 L.marker([819, 761.5], { icon: ring }).addTo(map).bindPopup(customPopupInfo, {
     className: 'custom-popup'
-}).openPopup();
+})
 
 // Score-Element initialisieren
 var scoreElement = document.getElementById('score');
