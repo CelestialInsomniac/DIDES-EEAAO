@@ -3,14 +3,18 @@ var map = L.map('map', {
     crs: L.CRS.Simple,
     minZoom: -5,
     zoomControl: false, // Entfernt die Zoom-Steuerung
-    attributionControl: false // Entfernt das Leaflet Logo unten rechts
+    attributionControl: false, // Entfernt das Leaflet Logo unten rechts
+    //scrollWheelZoom: false,
+    //touchZoom: false,
+    maxZoom: 3,
+    minZoom: 1,
 });
 
 var ring = L.icon({
     iconUrl: 'fragen/quizmap v.1/icons/icon_ring.png',
     iconSize: [120, 120],
     iconAnchor: [60, 60],
-    popupAnchor: [-3, -76]
+    popupAnchor: [-3, -76],
 });
 
 //ÄNDERUNG
@@ -18,7 +22,7 @@ var completedIcon = L.icon({
     iconUrl: 'fragen/quizmap v.1/icons/icon_ring_cleared.png',
     iconSize: [120, 120],
     iconAnchor: [60, 60],
-    popupAnchor: [-3, -76]
+    popupAnchor: [-3, -76],
 });
 
 var bounds = [[0, 0], [1500, 1500]];
@@ -28,7 +32,7 @@ var image = L.imageOverlay('fragen/quizmap v.1/background/Background_V1.png', bo
 map.fitBounds(bounds);
 
 // Grundausrichtung mittig, Zoom Level 1
-map.setView([750, 750], 1);
+map.setView([750, 750], 2);
 
 // Infomarker
 var customPopupInfo = "<div class='custom-popup'>Everything Everywhere All at Once </br> Kennst du alle Filmreferenzen? </br></br> Wie wird gespielt? </br> </br> Ziehe an der Netzwerkkarte. Wenn du einen der Knotenpunkte antippst, erscheint ein Quizfenster. Errate die richtigen Antworten und sammle so viele Bagels wie möglich! </br> </br> Wenn du die Seite schliesst, verlierst du deine Bagels.</div>";
