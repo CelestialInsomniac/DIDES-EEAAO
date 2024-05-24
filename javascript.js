@@ -13,6 +13,14 @@ var ring = L.icon({
     popupAnchor: [-3, -76]
 });
 
+//ÄNDERUNG
+var completedIcon = L.icon({
+    iconUrl: 'fragen/quizmap v.1/icons/icon_ring_cleared.png',
+    iconSize: [120, 120],
+    iconAnchor: [60, 60],
+    popupAnchor: [-3, -76]
+});
+
 var bounds = [[0, 0], [1500, 1500]];
 var image = L.imageOverlay('fragen/quizmap v.1/background/Background_V1.png', bounds).addTo(map);
 
@@ -45,6 +53,12 @@ function updateScore() {
     scoreElement.innerText = score;
 }
 
+//ÄNDERUNG
+// Funktion zum Aktualisieren des Marker-Icons
+function updateMarkerIcon(marker, icon) {
+    marker.setIcon(icon);
+}
+
 // Funktion Quizmarker Standard
 function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId) {
     var quizContent = `
@@ -67,13 +81,13 @@ function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl
             displayStoredAnswer(questionId, correctAnswerIndex);
         } else {
             document.getElementById(`answer1-${questionId}`).addEventListener('click', function () {
-                handleAnswer(`answer1-${questionId}`, correctAnswerIndex === 0, correctAnswerIndex, questionId);
+                handleAnswer(`answer1-${questionId}`, correctAnswerIndex === 0, correctAnswerIndex, questionId, marker);
             });
             document.getElementById(`answer2-${questionId}`).addEventListener('click', function () {
-                handleAnswer(`answer2-${questionId}`, correctAnswerIndex === 1, correctAnswerIndex, questionId);
+                handleAnswer(`answer2-${questionId}`, correctAnswerIndex === 1, correctAnswerIndex, questionId, marker);
             });
             document.getElementById(`answer3-${questionId}`).addEventListener('click', function () {
-                handleAnswer(`answer3-${questionId}`, correctAnswerIndex === 2, correctAnswerIndex, questionId);
+                handleAnswer(`answer3-${questionId}`, correctAnswerIndex === 2, correctAnswerIndex, questionId, marker);
             });
         }
 
@@ -96,7 +110,7 @@ function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl
 addQuizMarker(653, 780.5, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Peter aus Ghostbusters', 'Penny aus Inspector Gadget'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage2');
 
 // Funktion zum Speichern der Antworten und Hinzufügen des zusätzlichen Bildes
-function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId) {
+function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId, marker) { //ÄNDERUNG: Marker hinzufügen
     var selectedAnswer = document.getElementById(selectedAnswerId);
     var correctAnswer = document.querySelectorAll(`#quiz-${questionId} .answer`)[correctAnswerIndex];
 
@@ -151,6 +165,10 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
             sessionStorage.setItem('additionalImageAdded-' + questionId, 'true');
         }
     }
+
+    //ÄNDERUNG
+    // Update the marker icon after answering the question
+    updateMarkerIcon(marker, completedIcon);
 }
 
 function displayStoredAnswer(questionId, correctAnswerIndex) {
@@ -222,13 +240,13 @@ function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, ima
             displayStoredAnswer(questionId, correctAnswerIndex);
         } else {
             document.getElementById(`answer1-${questionId}`).addEventListener('click', function () {
-                handleAnswer(`answer1-${questionId}`, correctAnswerIndex === 0, correctAnswerIndex, questionId);
+                handleAnswer(`answer1-${questionId}`, correctAnswerIndex === 0, correctAnswerIndex, questionId, marker);
             });
             document.getElementById(`answer2-${questionId}`).addEventListener('click', function () {
-                handleAnswer(`answer2-${questionId}`, correctAnswerIndex === 1, correctAnswerIndex, questionId);
+                handleAnswer(`answer2-${questionId}`, correctAnswerIndex === 1, correctAnswerIndex, questionId, marker);
             });
             document.getElementById(`answer3-${questionId}`).addEventListener('click', function () {
-                handleAnswer(`answer3-${questionId}`, correctAnswerIndex === 2, correctAnswerIndex, questionId);
+                handleAnswer(`answer3-${questionId}`, correctAnswerIndex === 2, correctAnswerIndex, questionId, marker);
             });
         }
         document.getElementById(`sound-${questionId}`).addEventListener('click', function () {
@@ -266,13 +284,13 @@ function addQuizMarkerVideo(lat, lng, question, answers, correctAnswerIndex, vid
             displayStoredAnswer(questionId, correctAnswerIndex);
         } else {
             document.getElementById(`answer1-${questionId}`).addEventListener('click', function () {
-                handleAnswer(`answer1-${questionId}`, correctAnswerIndex === 0, correctAnswerIndex, questionId);
+                handleAnswer(`answer1-${questionId}`, correctAnswerIndex === 0, correctAnswerIndex, questionId, marker);
             });
             document.getElementById(`answer2-${questionId}`).addEventListener('click', function () {
-                handleAnswer(`answer2-${questionId}`, correctAnswerIndex === 1, correctAnswerIndex, questionId);
+                handleAnswer(`answer2-${questionId}`, correctAnswerIndex === 1, correctAnswerIndex, questionId, marker);
             });
             document.getElementById(`answer3-${questionId}`).addEventListener('click', function () {
-                handleAnswer(`answer3-${questionId}`, correctAnswerIndex === 2, correctAnswerIndex, questionId);
+                handleAnswer(`answer3-${questionId}`, correctAnswerIndex === 2, correctAnswerIndex, questionId, marker);
             });
 
             // Video-Pause-Handling
