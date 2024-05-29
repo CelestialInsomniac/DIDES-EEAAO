@@ -38,13 +38,13 @@ body,
 }
 
 .custom-popup .leaflet-popup-content-wrapper {
-    background-color: #2A2E34;
+    background-color: #668ba0;
     color: #ffffff;
     opacity: 80%;
 }
 
 .custom-popup .leaflet-popup-tip {
-    background-color: #2A2E34;
+    background-color: #668ba0;
     opacity: 80%;
 }
 
@@ -71,8 +71,9 @@ body,
 }
 
 .answer {
-    background-color: #454a53;
-    border: 2px solid #454a53;
+    background-color: #86bdd9;
+    border: 2px solid #94d5f500;
+    
     border-radius: 12px;
     font-family: 'Forum';
     font-size: 20px;
@@ -89,17 +90,19 @@ body,
 
 /* DESKTOP ONLY bei hover */
 .answer:hover {
-    background-color: #575c66;
-    border-color: #575c66;
+    background-color: #b5e6ff;
+    border-color: #94d5f500;
 }
 
 .answer:disabled {
-    background-color: #31343c;
+    background-color: #7ea3b6;
+    border: 2px solid #94d5f500;
+    border-radius: 12px;
 }
 
 .sound {
-    background-color: #454a53;
-    border: 2px solid #454a53;
+    background-color: #86bdd9;
+    border: 2px solid #94d5f500;
     border-radius: 12px;
     font-family: 'Forum';
     font-size: 20px;
