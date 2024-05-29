@@ -18,21 +18,22 @@ body,
 }
 
 #score {
+    font-family: 'pixelfont';
     position: fixed;
-    top: 10px;
-    right: 20px;
-    font-size: 24px;
+    top: 0.45em;
+    right: 0.2em;
+    font-size: 1.5em;
     color: #fff;
-    padding: 10px;
+    padding: 0.625em;
     z-index: 1000;
 }
 
 #bagel {
     position: fixed;
-    top: 15px;
-    right: 50px;
-    width: 40px;
-    height: 40px;
+    top: 0.938em;
+    right: 3.125em;
+    width: 2.5em;
+    height: 2.5em;
     z-index: 1000;
 }
 
@@ -48,10 +49,10 @@ body,
 }
 
 .custom-popup .leaflet-popup-content {
-    margin: 12px;
-    padding: 25px;
+    margin: 0.75em;
+    padding: 1.563em;
     font-family: 'pixelfont';
-    font-size: 18px;
+    font-size: 1.1em;
     font-weight: 400;
     font-style: normal;
 }
@@ -61,7 +62,7 @@ body,
 }
 
 .additional-image {
-    padding-top: 20px;
+    padding-top: 1.25em;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -71,17 +72,17 @@ body,
 
 .answer {
     background-color: #454a53;
-    border: 2px solid #454a53;
-    border-radius: 12px;
+    border: 0.125em solid #454a53;
+    border-radius: 0.75em;
     font-family: 'pixelfont';
-    font-size: 14px;
+    font-size: 0.9em;
     color: white;
-    padding: 10px 15px;
+    padding: 0.625em 0.938em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 8px 2px;
+    font-size: 1em;
+    margin: 0.5em 0.125em;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
     width: 300px;
@@ -100,17 +101,17 @@ body,
 
 .sound {
     background-color: #454a53;
-    border: 2px solid #454a53;
-    border-radius: 12px;
+    border: 0.125em solid #454a53;
+    border-radius: 0.75em;
     font-family: 'Forum';
-    font-size: 20px;
+    font-size: 1.3em;
     color: white;
-    padding: 10px 15px;
+    padding: 0.625em 0.938em;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 8px 2px;
+    font-size: 1em;
+    margin: 0.5em 0.125em;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
 }
