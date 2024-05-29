@@ -124,6 +124,16 @@ function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl
 // Frage 1 - Erste Antwort ist korrekt
 addQuizMarker(653, 780.5, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Peter aus Ghostbusters', 'Penny aus Inspector Gadget'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage2');
 
+// Frage 4 - Dritte Antwort ist korrekt
+addQuizMarker(803, 1062, 'Auf was spielen diese zwei Gegenstände an?', ['Gut und Böse', 'Tag und Nacht', 'Yin und Yang'], 2, 'fragen/quizmap v.1/bilder/Frage4.jpg', 'frage4');
+
+// Frage 5 - Zweite Antwort ist korrekt
+addQuizMarker(1040, 753, 'In welchem alternativen Universum lernt Evelyn Kung Fu wie Neo, was eine Anspielung auf eine ähnliche Szene in einem anderen Film darstellt?', ['Crouching Tiger, Hidden Dragon', 'The Matrix', 'Enter the Dragon'], 1, 'fragen/quizmap v.1/bilder/Frage5.png', 'frage5');
+
+// Frage 6 - Zweite Antwort ist korrekt
+addQuizMarker(508, 553, 'Auf welchen legendären Kung Fu Meister spielt dieser Charakter an?', ['Zenmeister aus Fist of Zen', 'Pai Mei aus Kill Bill', 'Shifu aus Kung Fu Panda'], 1, 'fragen/quizmap v.1/bilder/Frage6.png', 'frage6');
+
+
 // Funktion zum Speichern der Antworten und Hinzufügen des zusätzlichen Bildes
 function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId, marker) { //ÄNDERUNG: Marker hinzufügen
     var selectedAnswer = document.getElementById(selectedAnswerId);
@@ -171,6 +181,60 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
         if (!additionalImage) {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/SpaceOdyssey.jpg';
+            additionalImage.style.width = '50%';
+            additionalImage.style.height = 'auto';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
+
+            // Markiere, dass das zusätzliche Bild hinzugefügt wurde
+            sessionStorage.setItem('additionalImageAdded-' + questionId, 'true');
+        }
+    }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 4
+    if (questionId === 'frage4') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/yin und yang.jpg';
+            additionalImage.style.width = '50%';
+            additionalImage.style.height = 'auto';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
+
+            // Markiere, dass das zusätzliche Bild hinzugefügt wurde
+            sessionStorage.setItem('additionalImageAdded-' + questionId, 'true');
+        }
+    }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 5
+    if (questionId === 'frage5') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/The Matrix.jpg';
+            additionalImage.style.width = '50%';
+            additionalImage.style.height = 'auto';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
+
+            // Markiere, dass das zusätzliche Bild hinzugefügt wurde
+            sessionStorage.setItem('additionalImageAdded-' + questionId, 'true');
+        }
+    }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 6
+    if (questionId === 'frage6') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/kill bill pai mei.png';
             additionalImage.style.width = '50%';
             additionalImage.style.height = 'auto';
             additionalImage.classList.add('additional-image');
