@@ -125,10 +125,10 @@ function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl
 addQuizMarker(653, 780.5, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Peter aus Ghostbusters', 'Penny aus Inspector Gadget'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage2');
 
 // Frage 4 - Dritte Antwort ist korrekt
-addQuizMarker(803, 1062, 'Auf was spielen diese zwei Gegenstände an?', ['Gut und Böse', 'Tag und Nacht', 'Yin und Yang'], 2, 'fragen/quizmap v.1/bilder/Frage4.jpg', 'frage4');
+addQuizMarker(803.5, 1062, 'Auf was spielen der Bagel und das Googly-Eye an?', ['Gut und Böse', 'Tag und Nacht', 'Yin und Yang'], 2, 'fragen/quizmap v.1/bilder/Frage4.jpg', 'frage4');
 
 // Frage 5 - Zweite Antwort ist korrekt
-addQuizMarker(1040, 753, 'In welchem alternativen Universum lernt Evelyn Kung Fu wie Neo, was eine Anspielung auf eine ähnliche Szene in einem anderen Film darstellt?', ['Crouching Tiger, Hidden Dragon', 'The Matrix', 'Enter the Dragon'], 1, 'fragen/quizmap v.1/bilder/Frage5.png', 'frage5');
+addQuizMarker(1039, 751.5, 'In welchem alternativen Universum lernt Evelyn Kung Fu wie Neo, was eine Anspielung auf eine ähnliche Szene in einem anderen Film darstellt?', ['Crouching Tiger, Hidden Dragon', 'The Matrix', 'Enter the Dragon'], 1, 'fragen/quizmap v.1/bilder/Frage5.png', 'frage5');
 
 // Frage 6 - Zweite Antwort ist korrekt
 addQuizMarker(508, 553, 'Auf welchen legendären Kung Fu Meister spielt dieser Charakter an?', ['Zenmeister aus Fist of Zen', 'Pai Mei aus Kill Bill', 'Shifu aus Kung Fu Panda'], 1, 'fragen/quizmap v.1/bilder/Frage6.png', 'frage6');
