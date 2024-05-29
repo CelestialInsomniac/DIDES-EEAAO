@@ -276,8 +276,6 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
         if (!additionalImage) {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/Data aus Die Goonies.jpg';
-            additionalImage.style.width = '50%';
-            additionalImage.style.height = 'auto';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
         }
@@ -304,9 +302,8 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
         if (!additionalImage) {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/yin und yang.jpg';
-            additionalImage.style.width = '50%';
-            additionalImage.style.height = 'auto';
             additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
         }
     }
 
@@ -318,8 +315,6 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
         if (!additionalImage) {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/The Matrix.jpg';
-            additionalImage.style.width = '50%';
-            additionalImage.style.height = 'auto';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
         }
@@ -333,8 +328,6 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
         if (!additionalImage) {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/kill bill pai mei.png';
-            additionalImage.style.width = '50%';
-            additionalImage.style.height = 'auto';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
         }
