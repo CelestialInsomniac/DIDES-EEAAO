@@ -4,7 +4,7 @@ body {
     margin: 0;
 }
 
-/** Leaflet CSS **/
+/* Leaflet CSS */
 html,
 body,
 #map {
@@ -57,7 +57,6 @@ body,
     font-style: normal;
 }
 
-/* Entfernt den Schließen-Button im Popup */
 .leaflet-popup-close-button {
     display: none !important;
 }
@@ -69,4 +68,45 @@ body,
     margin-right: auto;
     width: 60%;
     height: auto;
+}
+
+.answer {
+    background-color: #454a53;
+    border: 2px solid #454a53;
+    border-radius: 12px;
+    font-family: 'Forum';
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* DESKTOP ONLY bei hover */
+.answer:hover {
+    background-color: #575c66;
+    border-color: #575c66;
+}
+
+.answer:disabled {
+    background-color: #31343c;
+}
+
+.sound {
+    background-color: #454a53;
+    border: 2px solid #454a53;
+    border-radius: 12px;
+    font-family: 'Forum';
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 8px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
 }
