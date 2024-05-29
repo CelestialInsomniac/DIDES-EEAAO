@@ -113,8 +113,6 @@ function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl
         if (questionId === 'frage2' && !additionalImage && sessionStorage.getItem('additionalImageAdded-' + questionId) === 'true') {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/Data aus Die Goonies.jpg';
-            additionalImage.style.width = '50%';
-            additionalImage.style.height = 'auto';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
         }
@@ -181,8 +179,6 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
         if (!additionalImage) {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/SpaceOdyssey.jpg';
-            additionalImage.style.width = '50%';
-            additionalImage.style.height = 'auto';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
 
@@ -199,8 +195,6 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
         if (!additionalImage) {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/yin und yang.jpg';
-            additionalImage.style.width = '50%';
-            additionalImage.style.height = 'auto';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
 
@@ -217,8 +211,6 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
         if (!additionalImage) {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/The Matrix.jpg';
-            additionalImage.style.width = '50%';
-            additionalImage.style.height = 'auto';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
 
@@ -235,8 +227,6 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
         if (!additionalImage) {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/kill bill pai mei.png';
-            additionalImage.style.width = '50%';
-            additionalImage.style.height = 'auto';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
 
