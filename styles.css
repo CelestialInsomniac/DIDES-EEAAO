@@ -84,6 +84,8 @@ body,
     margin: 8px 2px;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
+    width: 300px;
+    height: 70px;
 }
 
 /* DESKTOP ONLY bei hover */
