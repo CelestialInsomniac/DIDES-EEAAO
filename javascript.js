@@ -295,6 +295,50 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
             popupContent.appendChild(additionalImage);
         }
     }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 4
+    if (questionId === 'frage4') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/yin und yang.jpg';
+            additionalImage.style.width = '50%';
+            additionalImage.style.height = 'auto';
+            additionalImage.classList.add('additional-image');
+        }
+    }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 5
+    if (questionId === 'frage5') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/The Matrix.jpg';
+            additionalImage.style.width = '50%';
+            additionalImage.style.height = 'auto';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
+        }
+    }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 6
+    if (questionId === 'frage6') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/kill bill pai mei.png';
+            additionalImage.style.width = '50%';
+            additionalImage.style.height = 'auto';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
+        }
+    }
 }
 
 // Funktion Quizmarker mit Sound
