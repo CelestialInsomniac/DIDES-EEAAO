@@ -1,3 +1,45 @@
+// STARTSCREEN 
+
+document.addEventListener('DOMContentLoaded', function() {
+    var introVideo = document.getElementById('introVideo');
+    var map = document.getElementById('map');
+    var score = document.getElementById('score');
+    var bagel = document.getElementById('bagel');
+
+    // Verstecke Karte, Punktzahl und Bagel beim Laden der Seite
+    map.style.display = 'none';
+    score.style.display = 'none';
+    bagel.style.display = 'none';
+
+    // Fallback: Zeige den Inhalt nach einer bestimmten Zeit
+    setTimeout(function() {
+        showContent();
+    }, 17000); // 17 Sekunden
+
+    // Sobald das Video beendet ist, zeige den Inhalt an
+    introVideo.addEventListener('ended', showContent);
+
+    // Funktion zum Anzeigen des Inhalts
+    function showContent() {
+        // Zeige Karte, Punktzahl und Bagel
+        map.style.display = 'block';
+        score.style.display = 'block';
+        bagel.style.display = 'block';
+
+        // Verstecke den Startbildschirm
+        var startscreen = document.getElementById('startscreen');
+        startscreen.style.display = 'none';
+    }
+
+    // Versuche, das Video zu starten
+    introVideo.play().catch(function(error) {
+        console.log("Video konnte nicht automatisch gestartet werden:", error);
+        showContent(); // Zeige den Inhalt sofort, falls das Video nicht abgespielt werden kann
+    });
+});
+
+
+
 // LEAFLET JS
 var map = L.map('map', {
     crs: L.CRS.Simple,

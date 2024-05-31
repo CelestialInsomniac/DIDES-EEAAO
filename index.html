@@ -1,12 +1,12 @@
+<!DOCTYPE html>
 <html lang="de">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
-    <!-- CSS & JS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
-    <script src="javascript.js" defer></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,9 +24,20 @@
 </head>
 
 <body>
+    <!-- Intro -->
+    <div id="startscreen">
+        <video id="introVideo" autoplay muted playsinline>
+            <source src="fragen/quizmap v.1/video/Try_Startscreen3_inkl.Projektname.mp4" type="video/mp4">
+        </video>
+    </div>
+    <!-- Map -->
     <div id="map"> </div>
+    <!-- Score & Bagel -->
     <div id="score"></div>
     <img src="fragen/quizmap v.1/icons/bagel.png" alt="Bagel" id="bagel">
+
+    <!-- JavaScript -->
+    <script src="javascript.js" defer></script>
 </body>
 
 </html>
