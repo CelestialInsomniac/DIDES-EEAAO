@@ -11,8 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
     score.style.display = 'none';
     bagel.style.display = 'none';
 
+    // Fallback: Zeige den Inhalt nach einer bestimmten Zeit
+    setTimeout(function() {
+        showContent();
+    }, 17000); // 17 Sekunden
+
     // Sobald das Video beendet ist, zeige den Inhalt an
-    introVideo.addEventListener('ended', function() {
+    introVideo.addEventListener('ended', showContent);
+
+    // Funktion zum Anzeigen des Inhalts
+    function showContent() {
         // Zeige Karte, Punktzahl und Bagel
         map.style.display = 'block';
         score.style.display = 'block';
@@ -21,8 +29,15 @@ document.addEventListener('DOMContentLoaded', function() {
         // Verstecke den Startbildschirm
         var startscreen = document.getElementById('startscreen');
         startscreen.style.display = 'none';
+    }
+
+    // Versuche, das Video zu starten
+    introVideo.play().catch(function(error) {
+        console.log("Video konnte nicht automatisch gestartet werden:", error);
+        showContent(); // Zeige den Inhalt sofort, falls das Video nicht abgespielt werden kann
     });
 });
+
 
 
 // LEAFLET JS
