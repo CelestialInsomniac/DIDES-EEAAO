@@ -236,7 +236,7 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/yin und yang.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/yin und yang.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
 
@@ -333,7 +333,7 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/yin und yang.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/yin und yang.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
         }
