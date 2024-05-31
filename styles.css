@@ -18,6 +18,7 @@ body {
     width: 100vw;
     height: 100vh;
     z-index: 9999;
+    background-color: #000;    
 }
 
 #startscreen video {
