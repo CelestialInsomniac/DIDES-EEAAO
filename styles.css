@@ -17,7 +17,7 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 9999;
+    z-index: 9999; 
 }
 
 #startscreen video {
@@ -25,13 +25,6 @@ body {
     height: 100%;
     object-fit: cover;
 }
-
-@media only screen and (max-width: 768px) {
-    #startscreen video {
-        object-fit: contain;
-    }
-}
-
 /* Leaflet CSS */
 html,
 body,
