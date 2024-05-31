@@ -1,3 +1,30 @@
+// STARTSCREEN 
+
+document.addEventListener('DOMContentLoaded', function() {
+    var introVideo = document.getElementById('introVideo');
+    var map = document.getElementById('map');
+    var score = document.getElementById('score');
+    var bagel = document.getElementById('bagel');
+
+    // Verstecke Karte, Punktzahl und Bagel beim Laden der Seite
+    map.style.display = 'none';
+    score.style.display = 'none';
+    bagel.style.display = 'none';
+
+    // Sobald das Video beendet ist, zeige den Inhalt an
+    introVideo.addEventListener('ended', function() {
+        // Zeige Karte, Punktzahl und Bagel
+        map.style.display = 'block';
+        score.style.display = 'block';
+        bagel.style.display = 'block';
+
+        // Verstecke den Startbildschirm
+        var startscreen = document.getElementById('startscreen');
+        startscreen.style.display = 'none';
+    });
+});
+
+
 // LEAFLET JS
 var map = L.map('map', {
     crs: L.CRS.Simple,

@@ -9,6 +9,22 @@ body {
     src: url('fonts/press-start-2p/PressStart2P-Regular.ttf');
 }
 
+/* Stil für den Startbildschirm */
+#startscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999; /* Stellt sicher, dass der Startbildschirm über allem anderen liegt */
+}
+
+#startscreen video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* Leaflet CSS */
 html,
 body,
