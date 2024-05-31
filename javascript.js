@@ -11,11 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     score.style.display = 'none';
     bagel.style.display = 'none';
 
-    // Fallback: Zeige den Inhalt nach einer bestimmten Zeit
-    setTimeout(function() {
-        showContent();
-    }, 17000); // 17 Sekunden
-
     // Sobald das Video beendet ist, zeige den Inhalt an
     introVideo.addEventListener('ended', showContent);
 
