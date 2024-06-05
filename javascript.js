@@ -37,9 +37,9 @@ var map = L.map('map', {
     zoomControl: false, // Entfernt die Zoom-Steuerung
     attributionControl: false, // Entfernt das Leaflet Logo unten rechts
     scrollWheelZoom: false,
-    touchZoom: false,
-    //maxZoom: 3,
-    //minZoom: 1,
+    touchZoom: true,
+    maxZoom: 3,
+    minZoom: 1,
 });
 
 
@@ -391,31 +391,31 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
         }
     }
 
-            // Zusätzliches Bild im Popup anzeigen, nur für Frage 10
-            if (questionId === 'frage10') {
-                var popupContent = document.querySelector(`#quiz-${questionId}`);
-                var additionalImage = popupContent.querySelector('.additional-image');
-        
-                if (!additionalImage) {
-                    additionalImage = document.createElement('img');
-                    additionalImage.src = 'fragen/quizmap v.1/bilder/Ratatouille.jpg';
-                    additionalImage.classList.add('additional-image');
-                    popupContent.appendChild(additionalImage);
-                }
-            }
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 10
+    if (questionId === 'frage10') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
 
-        // Zusätzliches Bild im Popup anzeigen, nur für Frage 12
-        if (questionId === 'frage12') {
-            var popupContent = document.querySelector(`#quiz-${questionId}`);
-            var additionalImage = popupContent.querySelector('.additional-image');
-    
-            if (!additionalImage) {
-                additionalImage = document.createElement('img');
-                additionalImage.src = 'fragen/quizmap v.1/bilder/Repo_Man.jpg';
-                additionalImage.classList.add('additional-image');
-                popupContent.appendChild(additionalImage);
-            }
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Ratatouille.jpg';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
         }
+    }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 12
+    if (questionId === 'frage12') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Repo_Man.jpg';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
+        }
+    }
 }
 
 
