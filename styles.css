@@ -79,13 +79,13 @@ body,
 }
 
 .custom-popup .leaflet-popup-content-wrapper {
-    background-color: #668ba0;
+    background-color: #434343;
     color: #ffffff;
     opacity: 80%;
 }
 
 .custom-popup .leaflet-popup-tip {
-    background-color: #668ba0;
+    background-color: #434343;
     opacity: 80%;
 }
 
@@ -129,7 +129,7 @@ body,
 }
 
 .answer {
-    background-color: #86bdd9;
+    background-color: #666666;
     border: 0.125em solid #94d5f500;
     border-radius: 0.75em;
     font-family: 'pixelfont';
@@ -150,7 +150,7 @@ body,
 
 @media only screen and (min-width: 768px) {
     .answer {
-        background-color: #86bdd9;
+        background-color: #666666;
         border: 0.125em solid #94d5f500;
         border-radius: 0.75em;
         font-family: 'pixelfont';
@@ -172,18 +172,18 @@ body,
 
 /* DESKTOP ONLY bei hover */
 .answer:hover {
-    background-color: #b5e6ff;
+    background-color: #878787;
     border-color: #94d5f500;
 }
 
 .answer:disabled {
-    background-color: #7ea3b6;
+    background-color: #4a4a4a;
     border: 2px solid #94d5f500;
     border-radius: 12px;
 }
 
 .sound {
-    background-color: #86bdd9;
+    background-color: #666666;
     border: 0.125em solid #94d5f500;
     border-radius: 0.75em;
     font-family: 'Forum';
