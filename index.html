@@ -13,22 +13,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
 
-    <!-- Leaflet CSS & JS-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <!-- Script muss nach Leaflet's CSS stehen! -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
     <title>Every EEAAO Reference at once - Das Quiz</title>
 </head>
 
 <body>
-    <!-- Map -->
-    <div id="map"> </div>
-    <!-- Score & Bagel -->
-    <div id="score"></div>
-    <img src="fragen/quizmap v.1/icons/bagel.png" alt="Bagel" id="bagel">
+    <!-- Intro -->
+    <div id="startscreen">
+        <video id="introVideo" autoplay>
+            <source src="fragen/quizmap v.1/video/EEAAO_Startscreen_2_3.mp4" type="video/mp4">
+        </video>
+    </div>
+    <!-- Titel -->
+    <div id="content" style="display: none;">
+        <h1>Every<br>EEAAO<br>Reference<br>at<br>once<br><br> - <br><br>Das Quiz</h1>
+        <button class="playbutton"><img src="fragen/quizmap v.1/icons/sound_button.png" alt="Sound" id="soundButton"></button>
+    </div>
 
     <!-- JavaScript -->
     <script src="javascript.js" defer></script>

@@ -2,6 +2,8 @@ body {
     padding: 0;
     margin: 0;
     hyphens: auto;
+    font-family: pixelfont;
+    background-color: #141414;
 }
 
 /* FONT IMPORT*/
@@ -9,6 +11,45 @@ body {
     font-family: pixelfont;
     src: url('fonts/press-start-2p/PressStart2P-Regular.ttf');
 }
+
+/* Startscreen */
+#startscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+#startscreen video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 1em;
+
+}
+
+.playbutton {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.playbutton img {
+    width: 50px;
+    height: 50px; 
+}
+
 
 /* Leaflet CSS */
 html,

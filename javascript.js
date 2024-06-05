@@ -1,3 +1,26 @@
+// STARTSCREEN
+document.addEventListener('DOMContentLoaded', (event) => {
+    const introVideo = document.getElementById('introVideo');
+    const contentDiv = document.getElementById('content');
+    const startscreenDiv = document.getElementById('startscreen');
+    const soundButton = document.getElementById('soundButton');
+
+    // Event listener for the video ending
+    introVideo.addEventListener('ended', () => {
+        // Hide the video element
+        startscreenDiv.style.display = 'none';
+        // Show the content div
+        contentDiv.style.display = 'block';
+    });
+
+    // Event listener for the sound button click
+    soundButton.addEventListener('click', () => {
+        // Open map.html
+        window.location.href = 'map.html';
+    });
+});
+
+
 // LEAFLET JS
 var map = L.map('map', {
     crs: L.CRS.Simple,
