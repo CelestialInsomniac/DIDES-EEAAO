@@ -33,16 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
 const pupil = document.getElementById('pupil');
 
 window.addEventListener('deviceorientation', (event) => {
-  const x = event.beta; // Neigung von vorne nach hinten
-  const y = event.gamma; // Neigung von links nach rechts
+    const x = event.beta; // Neigung von vorne nach hinten
+    const y = event.gamma; // Neigung von links nach rechts
 
-  const maxX = 15; // maximale Neigung nach vorne/hinten
-  const maxY = 15; // maximale Neigung nach links/rechts
+    const maxX = 15; // maximale Neigung nach vorne/hinten
+    const maxY = 15; // maximale Neigung nach links/rechts
 
-  const pupilX = (y / maxY) * 20; // Bewegung des Pupille in der X-Richtung
-  const pupilY = (x / maxX) * 20; // Bewegung des Pupille in der Y-Richtung
+    const pupilX = (y / maxY) * 20; // Bewegung des Pupille in der X-Richtung
+    const pupilY = (x / maxX) * 20; // Bewegung des Pupille in der Y-Richtung
 
-  pupil.style.transform = `translate(${pupilX - 50}%, ${pupilY - 50}%)`;
+    pupil.style.transform = `translate(${pupilX - 50}%, ${pupilY - 50}%)`;
 });
 
 
@@ -51,7 +51,7 @@ var map = L.map('map', {
     crs: L.CRS.Simple,
     minZoom: -5,
     zoomControl: false,
-    attributionControl: false, 
+    attributionControl: false,
     scrollWheelZoom: false,
     touchZoom: true,
     maxZoom: 3,
@@ -284,6 +284,70 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
         if (!additionalImage) {
             additionalImage = document.createElement('img');
             additionalImage.src = 'fragen/quizmap v.1/bilder/kill bill pai mei.png';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
+
+            // Markiere, dass das zusätzliche Bild hinzugefügt wurde
+            sessionStorage.setItem('additionalImageAdded-' + questionId, 'true');
+        }
+    }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 8
+    if (questionId === 'frage8') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Paprika.jpg';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
+
+            // Markiere, dass das zusätzliche Bild hinzugefügt wurde
+            sessionStorage.setItem('additionalImageAdded-' + questionId, 'true');
+        }
+    }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 9
+    if (questionId === 'frage9') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Elvis.jpg';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
+
+            // Markiere, dass das zusätzliche Bild hinzugefügt wurde
+            sessionStorage.setItem('additionalImageAdded-' + questionId, 'true');
+        }
+    }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 10
+    if (questionId === 'frage10') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Repo_Man.jpg';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
+
+            // Markiere, dass das zusätzliche Bild hinzugefügt wurde
+            sessionStorage.setItem('additionalImageAdded-' + questionId, 'true');
+        }
+    }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 12
+    if (questionId === 'frage12') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Ratatouille.jpg';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
 
