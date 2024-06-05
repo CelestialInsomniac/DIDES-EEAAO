@@ -132,6 +132,7 @@ addQuizMarker(1039, 751.5, 'In welchem alternativen Universum lernt Evelyn Kung 
 addQuizMarker(508, 553, 'Auf welchen legendären Kung Fu Meister spielt dieser Charakter an?', ['Zenmeister aus Fist of Zen', 'Pai Mei aus Kill Bill', 'Shifu aus Kung Fu Panda'], 1, 'fragen/quizmap v.1/bilder/Frage6.png', 'frage6');
 
 
+
 // Funktion zum Speichern der Antworten und Hinzufügen des zusätzlichen Bildes
 function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId, marker) { //ÄNDERUNG: Marker hinzufügen
     var selectedAnswer = document.getElementById(selectedAnswerId);
@@ -322,6 +323,32 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
             popupContent.appendChild(additionalImage);
         }
     }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 8
+    if (questionId === 'frage8') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Paprika.jpg';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
+        }
+    }
+
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 9
+    if (questionId === 'frage9') {
+        var popupContent = document.querySelector(`#quiz-${questionId}`);
+        var additionalImage = popupContent.querySelector('.additional-image');
+
+        if (!additionalImage) {
+            additionalImage = document.createElement('img');
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Elvis.jpg';
+            additionalImage.classList.add('additional-image');
+            popupContent.appendChild(additionalImage);
+        }
+    }
 }
 
 // Funktion Quizmarker mit Sound
@@ -417,4 +444,10 @@ function addQuizMarkerVideo(lat, lng, question, answers, correctAnswerIndex, vid
 addQuizMarkerVideo(593, 966.5, 'Aus welchem Film stammt diese Szene ursprünglich?', ['King Kong', 'Planet der Affen', '2001: Odyssee im Weltraum'], 2, 'fragen/quizmap v.1/video/SpaceOdyssey.mp4', 'frage3');
 
 // Frage 7 - Zweite Antwort ist korrekt
-addQuizMarkerVideo(1017, 567, 'Woher Stammen diese Szenen??', ['Tiger and Dragon', 'Michelle Yeohs Auftritte auf dem roten Teppich', 'Sie wurden extra für den Film gedreht'], 1, 'fragen/quizmap v.1/video/EEAAO_Michelle Yeohs.mov', 'frage7');
+addQuizMarkerVideo(1017, 567, 'Woher Stammen diese Szenen?', ['Tiger and Dragon', 'Michelle Yeohs Auftritte auf dem roten Teppich', 'Sie wurden extra für den Film gedreht'], 1, 'fragen/quizmap v.1/video/EEAAO_Michelle Yeohs.mov', 'frage7');
+
+// Frage 8 - Erste Antwort ist korrekt
+addQuizMarkerVideo(1002.7, 966.5, 'In welchem Film gibt es eine solche Szene, in dem "Daniels" als Regisseur aufgeführt wird?', ['Paprika', 'Perfect Blue', 'Inception'], 0, 'fragen/quizmap v.1/video/MetaEnd.mp4', 'frage8');
+
+// Frage 9 - Dritte Antwort ist korrekt
+addQuizMarkerVideo(687, 527, 'Welche Musik-Ikone wird hier referenziert?', ['Madonna', 'Prince', 'Elvis Presley'], 2, 'fragen/quizmap v.1/video/Jobu Tupaki.mov', 'frage9');
