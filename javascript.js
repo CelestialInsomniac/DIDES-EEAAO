@@ -72,7 +72,7 @@ var wrongIcon = L.icon({
 });
 
 var bounds = [[0, 0], [1500, 1500]];
-var image = L.imageOverlay('fragen/quizmap v.1/background/Background_V1.png', bounds).addTo(map);
+var image = L.imageOverlay('fragen/quizmap v.1/background/Background_V2.png', bounds).addTo(map);
 
 // Fit the map to the bounds of the image
 map.fitBounds(bounds);
