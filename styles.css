@@ -109,10 +109,14 @@ body,
         font-weight: 400;
         font-style: normal;
     }
+
+    .leaflet-popup-close-button {
+        display: block;
+    }
 }
 
 .leaflet-popup-close-button {
-    display: block;
+    display: none !important;
 }
 
 .additional-image {
