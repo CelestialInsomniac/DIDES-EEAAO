@@ -223,7 +223,7 @@ body,
     background-color: #434343;
     color: #ffffff;
     opacity: 80%;
-    width: 361px;
+    width: 360px;
   }
 }
 
@@ -260,28 +260,46 @@ body,
   display: none !important;
 }
 
-@media only screen and (min-width: 768px) {
-.additional-image {
-  padding-top: 1.25em;
-  display: block;
-  margin-left: -10%;
-  margin-right: -10%;
-  margin-bottom: -10%;
-  width: 100%;
+.QuizAsset {
+  width: 114%;
   height: auto;
-  border-radius: 0.75em;
-}
+  margin-left: -4.25%;
+  margin-top: -10%;
+  border-top-left-radius: 0.75em;
+  border-top-right-radius: 0.75em;
 }
 
 .additional-image {
   padding-top: 1.25em;
   display: block;
-  margin-left: -10%;
-  margin-right: -10%;
+  margin-left: -4.25%;
   margin-bottom: -10%;
-  width: 120%;
+  width: 113.8%;
   height: auto;
   border-radius: 0.75em;
+}
+
+@media only screen and (min-width: 768px) {
+  .QuizAsset {
+    width: 120%;
+    height: auto;
+    margin-left: -10%;
+    margin-right: -10%;
+    margin-top: -10%;
+    border-top-left-radius: 0.75em;
+    border-top-right-radius: 0.75em;
+  }
+
+  .additional-image {
+    padding-top: 1.25em;
+    display: block;
+    margin-left: -10%;
+    margin-right: -10%;
+    margin-bottom: -10%;
+    width: 120%;
+    height: auto;
+    border-radius: 0.75em;
+  }
 }
 
 .answer {
@@ -298,7 +316,7 @@ body,
   margin: 0.5em 0.125em;
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s;
-  width: 280px;
+  width: 315px;
   height: 40px;
 
 }

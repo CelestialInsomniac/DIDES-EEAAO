@@ -132,7 +132,7 @@ function updateMarkerIcon(marker, isCorrect) {
 function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId) {
     var quizContent = `
         <div id="quiz-${questionId}">
-            <img src="${imageUrl}" alt="Quiz Image" style="width: 120%; height: auto; margin-left:-10%; margin-top:-10%; border-top-left-radius: 0.75em; border-top-right-radius: 0.75em;">
+            <img src="${imageUrl}" alt="Quiz Image" class="QuizAsset">
             <p>${question}</p>
             <button id="answer1-${questionId}" class="answer">${answers[0]}</button>
             <button id="answer2-${questionId}" class="answer">${answers[1]}</button>
@@ -505,7 +505,7 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
 function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId, soundUrl) {
     var quizContent = `
         <div id="quiz-${questionId}">
-            <img src="${imageUrl}" alt="Quiz Image" style="width: 120%; height: auto; margin-left:-10%; margin-top:-10%; border-top-left-radius: 0.75em; border-top-right-radius: 0.75em;">
+            <img src="${imageUrl}" alt="Quiz Image" class="QuizAsset">
             <p>${question}</p>
             <button id="answer1-${questionId}" class="answer">${answers[0]}</button>
             <button id="answer2-${questionId}" class="answer">${answers[1]}</button>
@@ -551,7 +551,7 @@ addQuizMarkerSound(818.5, 886.5, 'Welcher Song wurde verwendet und über den ges
 function addQuizMarkerVideo(lat, lng, question, answers, correctAnswerIndex, videoUrl, questionId) {
     var quizContent = `
         <div id="quiz-${questionId}">
-            <video id="video-${questionId}" controls style="width: 120%; height: auto; margin-left:-10%; margin-top:-10%; border-top-left-radius: 0.75em; border-top-right-radius: 0.75em;">
+            <video id="video-${questionId}" controls class="QuizAsset">
                 <source src="${videoUrl}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
