@@ -42,6 +42,14 @@ var map = L.map('map', {
     //minZoom: 1,
 });
 
+
+var infoIcon = L.icon({
+    iconUrl: 'fragen/quizmap v.1/icons/icon_infopoint.png',
+    iconSize: [120, 120],
+    iconAnchor: [60, 60],
+    popupAnchor: [-3, -76],
+});
+
 var ring = L.icon({
     iconUrl: 'fragen/quizmap v.1/icons/icon_ring.png',
     iconSize: [120, 120],
@@ -75,7 +83,7 @@ map.setView([750, 750], 3);
 // Infomarker
 var customPopupInfo = "<div class='custom-popup'>Everything Everywhere All at Once </br> Kennst du alle Filmreferenzen? </br></br> Wie wird gespielt? </br> </br> Ziehe an der Netzwerkkarte. Wenn du einen der Knotenpunkte antippst, erscheint ein Quizfenster. Errate die richtigen Antworten und sammle so viele Bagels wie möglich! </br> </br> Wenn du die Seite schliesst, verlierst du deine Bagels.</div>";
 
-L.marker([819, 761.5], { icon: ring }).addTo(map).bindPopup(customPopupInfo, {
+L.marker([819, 761.5], { icon: infoIcon }).addTo(map).bindPopup(customPopupInfo, {
     className: 'custom-popup'
 })
 
