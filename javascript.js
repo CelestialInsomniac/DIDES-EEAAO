@@ -1,6 +1,5 @@
 // STARTSCREEN 
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var introVideo = document.getElementById('introVideo');
     var map = document.getElementById('map');
     var score = document.getElementById('score');
@@ -27,12 +26,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Versuche, das Video zu starten
-    introVideo.play().catch(function(error) {
+    introVideo.play().catch(function (error) {
         console.log("Video konnte nicht automatisch gestartet werden:", error);
         showContent(); // Zeige den Inhalt sofort, falls das Video nicht abgespielt werden kann
     });
 });
-
 
 
 // LEAFLET JS
@@ -452,3 +450,6 @@ function addQuizMarkerVideo(lat, lng, question, answers, correctAnswerIndex, vid
 
 // Frage 3 - Dritte Antwort ist korrekt
 addQuizMarkerVideo(593, 966.5, 'Aus welchem Film stammt diese Szene ursprünglich?', ['King Kong', 'Planet der Affen', '2001: Odyssee im Weltraum'], 2, 'fragen/quizmap v.1/video/SpaceOdyssey.mp4', 'frage3');
+
+// Frage 7 - Zweite Antwort ist korrekt
+addQuizMarkerVideo(1017, 567, 'Woher Stammen diese Szenen??', ['Tiger and Dragon', 'Michelle Yeohs Auftritte auf dem roten Teppich', 'Sie wurden extra für den Film gedreht'], 1, 'fragen/quizmap v.1/video/EEAAO_Michelle Yeohs.mov', 'frage7');
