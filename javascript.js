@@ -167,8 +167,6 @@ addQuizMarker(508, 553, 'Auf welchen legendären Kung Fu Meister spielt dieser C
 addQuizMarker(935.5, 790, 'In welcher Weise ähnelt der Ansatz von EEAAO in Bezug auf Produktplatzierung dem des Films "Repo Man"?', ['Generische Bezeichnungen für Produkte wie "Soda" und "milk" anstelle von Markennamen.', 'Beide Filme verwenden eine Mischung aus generischen und spezifischen Produktbezeichnungen.', 'Beide Filme haben deutlich erkennbare Markenplatzierungen.'], 0, 'fragen/quizmap v.1/bilder/balm.png', 'frage10');
 
 
-
-
 // Funktion zum Speichern der Antworten und Hinzufügen des zusätzlichen Bildes
 function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId, marker) { //ÄNDERUNG: Marker hinzufügen
     var selectedAnswer = document.getElementById(selectedAnswerId);
