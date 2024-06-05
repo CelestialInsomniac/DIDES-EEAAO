@@ -2,15 +2,85 @@ body {
     padding: 0;
     margin: 0;
     hyphens: auto;
-    font-family: pixelfont;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
     background-color: #141414;
 }
 
-/* FONT IMPORT*/
-@font-face {
-    font-family: pixelfont;
-    src: url('fonts/press-start-2p/PressStart2P-Regular.ttf');
-}
+/* FONT */
+.roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .roboto-light {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .roboto-regular {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .roboto-medium {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .roboto-black {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .roboto-thin-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .roboto-light-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .roboto-regular-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .roboto-medium-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .roboto-bold-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .roboto-black-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+
 
 /* Startscreen */
 #startscreen {
@@ -26,7 +96,7 @@ body {
     object-fit: cover;
 }
 
-#content{
+#content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -46,7 +116,7 @@ body {
 
 .playbutton img {
     width: 50px;
-    height: 50px; 
+    height: 50px;
 }
 
 
@@ -59,10 +129,9 @@ body,
 }
 
 #score {
-    font-family: 'pixelfont';
     position: fixed;
-    top: 0.45em;
-    right: 0.2em;
+    top: 0.4em;
+    right: 0.25em;
     font-size: 1.5em;
     color: #fff;
     padding: 0.625em;
@@ -92,7 +161,6 @@ body,
 .custom-popup .leaflet-popup-content {
     margin: 0.25em;
     padding: 1em;
-    font-family: 'pixelfont';
     font-size: 0.8em;
     font-weight: 400;
     font-style: normal;
@@ -103,7 +171,6 @@ body,
     .custom-popup .leaflet-popup-content {
         margin: 0.75em;
         padding: 1.563em;
-        font-family: 'pixelfont';
         font-size: 1.1em;
         line-height: 25px;
         font-weight: 400;
@@ -132,7 +199,6 @@ body,
     background-color: #666666;
     border: 0.125em solid #94d5f500;
     border-radius: 0.75em;
-    font-family: 'pixelfont';
     font-size: 0.9em;
     color: white;
     padding: 0.625em 0.938em;
@@ -153,7 +219,6 @@ body,
         background-color: #666666;
         border: 0.125em solid #94d5f500;
         border-radius: 0.75em;
-        font-family: 'pixelfont';
         font-size: 0.9em;
         color: white;
         padding: 0.625em 0.938em;
@@ -186,7 +251,6 @@ body,
     background-color: #666666;
     border: 0.125em solid #94d5f500;
     border-radius: 0.75em;
-    font-family: 'Forum';
     font-size: 1.3em;
     color: white;
     padding: 0.625em 0.938em;

@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
 var map = L.map('map', {
     crs: L.CRS.Simple,
     minZoom: -5,
-    zoomControl: false, // Entfernt die Zoom-Steuerung
-    attributionControl: false, // Entfernt das Leaflet Logo unten rechts
+    zoomControl: false,
+    attributionControl: false, 
     scrollWheelZoom: false,
     touchZoom: false,
     //maxZoom: 3,
