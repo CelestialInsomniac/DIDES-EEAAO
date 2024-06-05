@@ -1,24 +1,37 @@
 // STARTSCREEN
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
     const introVideo = document.getElementById('introVideo');
     const contentDiv = document.getElementById('content');
     const startscreenDiv = document.getElementById('startscreen');
     const soundButton = document.getElementById('soundButton');
 
-    // Event listener for the video ending
+    // Event listener für die Benutzerinteraktion
+    document.addEventListener('click', () => {
+        // Video abspielen und Ton aktivieren
+        introVideo.play().then(() => {
+            introVideo.muted = false;
+        }).catch(error => {
+            console.error('Fehler beim Abspielen des Videos:', error);
+        });
+    });
+
+    // Event listener für das Ende des Videos
     introVideo.addEventListener('ended', () => {
         // Hide the video element
         startscreenDiv.style.display = 'none';
         // Show the content div
         contentDiv.style.display = 'block';
+        // Zurücksetzen der Stummschaltung für zukünftige Wiedergaben
+        introVideo.muted = true;
     });
 
-    // Event listener for the sound button click
+    // Event listener für den Button-Klick
     soundButton.addEventListener('click', () => {
-        // Open map.html
+        // map.html öffnen
         window.location.href = 'map.html';
     });
 });
+
 
 // SOUND VIDEO
 document.addEventListener('DOMContentLoaded', () => {
