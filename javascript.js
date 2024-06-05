@@ -131,8 +131,6 @@ addQuizMarker(1039, 751.5, 'In welchem alternativen Universum lernt Evelyn Kung 
 // Frage 6 - Zweite Antwort ist korrekt
 addQuizMarker(508, 553, 'Auf welchen legendären Kung Fu Meister spielt dieser Charakter an?', ['Zenmeister aus Fist of Zen', 'Pai Mei aus Kill Bill', 'Shifu aus Kung Fu Panda'], 1, 'fragen/quizmap v.1/bilder/Frage6.png', 'frage6');
 
-
-
 // Funktion zum Speichern der Antworten und Hinzufügen des zusätzlichen Bildes
 function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId, marker) { //ÄNDERUNG: Marker hinzufügen
     var selectedAnswer = document.getElementById(selectedAnswerId);
@@ -393,6 +391,11 @@ function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, ima
 // Frage 2 - Erste Antwort ist korrekt
 addQuizMarkerSound(730.5, 687.5, 'Zu welchem Game gehört dieser Soundeffekt?', ['Metroid', 'Super Smash Bros.', 'Metal Gear Solid'], 1, 'fragen/quizmap v.1/bilder/Frage1.png', 'frage1', 'fragen/quizmap v.1/audio/SuperSmashBros.mp3');
 
+// Frage 11 - Dritte Antwort ist korrekt
+addQuizMarkerSound(818.5, 886.5, 'Welcher Song wurde verwendet und über den gesamten Film verteilt immer wieder abgespielt?', ['Inside Out von Eve 6', 'If You Could Only See von Tonic', 'Absolutely (Story of a Girl) von Nine Days'], 2, 'fragen/quizmap v.1/bilder/EEAAO_Soundtracks2.jpg', 'frage11', 'fragen/quizmap v.1/audio/Nine Days - Absolutely (Story of a Girl).mp3');
+
+
+
 // Funktion Quizmarker mit Video
 function addQuizMarkerVideo(lat, lng, question, answers, correctAnswerIndex, videoUrl, questionId) {
     var quizContent = `
@@ -451,3 +454,69 @@ addQuizMarkerVideo(1002.7, 966.5, 'In welchem Film gibt es eine solche Szene, in
 
 // Frage 9 - Dritte Antwort ist korrekt
 addQuizMarkerVideo(687, 527, 'Welche Musik-Ikone wird hier referenziert?', ['Madonna', 'Prince', 'Elvis Presley'], 2, 'fragen/quizmap v.1/video/Jobu Tupaki.mov', 'frage9');
+
+
+
+
+
+
+
+function addSoundQuizMarker(lat, lng, question, soundUrls, correctAnswerIndex, questionId) {
+    var quizContent = `
+        <div id="quiz-${questionId}">
+            <p>${question}</p>
+            <div id="sound-buttons-${questionId}">
+                <button class="sound answer" data-sound="${soundUrls[0]}">Sound 1 abspielen</button>
+                <button class="sound answer" data-sound="${soundUrls[1]}">Sound 2 abspielen</button>
+                <button class="sound answer" data-sound="${soundUrls[2]}">Sound 3 abspielen</button>
+            </div>
+            <button id="confirm-${questionId}" class="confirm">Antwort bestätigen</button>
+        </div>
+    `;
+
+    var marker = L.marker([lat, lng], { icon: ring }).addTo(map)
+        .bindPopup(quizContent, {
+            className: 'custom-popup'
+        });
+
+    marker.on('popupopen', function () {
+        if (sessionStorage.getItem('quiz-' + questionId) !== null) {
+            displayStoredAnswer(questionId, correctAnswerIndex);
+        } else {
+            // Event-Listener für Soundbuttons (Antworten) hinzufügen
+            var soundButtons = document.querySelectorAll(`#quiz-${questionId} .sound`);
+            soundButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    selectAnswer(button, questionId);
+                });
+            });
+
+            // Event-Listener für Bestätigungsbutton hinzufügen
+            document.getElementById(`confirm-${questionId}`).addEventListener('click', function () {
+                var selectedSoundButton = document.querySelector(`#quiz-${questionId} .sound.selected`);
+                if (selectedSoundButton) {
+                    var soundUrl = selectedSoundButton.getAttribute('data-sound');
+                    playSound(soundUrl);
+                }
+                handleAnswer(questionId, correctAnswerIndex, marker);
+            });
+        }
+    });
+}
+
+// Funktion zur Auswahl einer Antwort
+function selectAnswer(selectedButton, questionId) {
+    var soundButtons = document.querySelectorAll(`#quiz-${questionId} .sound`);
+    soundButtons.forEach(function (button) {
+        button.classList.remove('selected');
+    });
+    selectedButton.classList.add('selected');
+}
+
+// Funktion zum Abspielen des ausgewählten Sounds
+function playSound(soundUrl) {
+    var audio = new Audio(soundUrl);
+    audio.play();
+    audio.volume = 0.3;
+}
+
