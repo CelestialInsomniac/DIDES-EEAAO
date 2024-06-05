@@ -20,6 +20,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
+// SOUND VIDEO
+document.addEventListener('DOMContentLoaded', () => {
+    const introVideo = document.getElementById('introVideo');
+       // Event listener für das Starten des Videos
+       introVideo.addEventListener('play', () => {
+           // Ton aktivieren
+           introVideo.muted = false;
+       });
+   
+       // Event listener für das Ende des Videos
+       introVideo.addEventListener('ended', () => {
+           // Zurücksetzen der Stummschaltung für zukünftige Wiedergaben
+           introVideo.muted = true;
+       });
+   });
+
 
 // LEAFLET JS
 var map = L.map('map', {
