@@ -215,6 +215,16 @@ body,
   background-color: #434343;
   color: #ffffff;
   opacity: 80%;
+  width: 361px;
+}
+
+@media only screen and (min-width: 768px) {
+  .custom-popup .leaflet-popup-content-wrapper {
+    background-color: #434343;
+    color: #ffffff;
+    opacity: 80%;
+    width: 281px;
+  }
 }
 
 .custom-popup .leaflet-popup-tip {
