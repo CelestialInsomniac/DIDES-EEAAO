@@ -1,40 +1,33 @@
 // STARTSCREEN
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
     const introVideo = document.getElementById('introVideo');
     const contentDiv = document.getElementById('content');
     const startscreenDiv = document.getElementById('startscreen');
     const soundButton = document.getElementById('soundButton');
 
-    // Event listener for the video ending
+    // Event listener für die Benutzerinteraktion (Klick oder Tap)
+    document.addEventListener('click', () => {
+        // Video abspielen und Ton aktivieren
+        introVideo.muted = false;
+        introVideo.play().catch(error => {
+            console.error('Fehler beim Abspielen des Videos:', error);
+        });
+    });
+
+    // Event listener für das Ende des Videos
     introVideo.addEventListener('ended', () => {
-        // Hide the video element
+        // Video-Element ausblenden
         startscreenDiv.style.display = 'none';
-        // Show the content div
+        // Inhalts-Div anzeigen
         contentDiv.style.display = 'block';
     });
 
-    // Event listener for the sound button click
+    // Event listener für den Button-Klick
     soundButton.addEventListener('click', () => {
-        // Open map.html
+        // map.html öffnen
         window.location.href = 'map.html';
     });
 });
-
-// SOUND VIDEO
-document.addEventListener('DOMContentLoaded', () => {
-    const introVideo = document.getElementById('introVideo');
-       // Event listener für das Starten des Videos
-       introVideo.addEventListener('play', () => {
-           // Ton aktivieren
-           introVideo.muted = false;
-       });
-   
-       // Event listener für das Ende des Videos
-       introVideo.addEventListener('ended', () => {
-           // Zurücksetzen der Stummschaltung für zukünftige Wiedergaben
-           introVideo.muted = true;
-       });
-   });
 
 
 // LEAFLET JS
