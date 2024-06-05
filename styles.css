@@ -253,10 +253,12 @@ body,
 .additional-image {
   padding-top: 1.25em;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
+  margin-left: -10%;
+  margin-right: -10%;
+  margin-bottom: -10%;
+  width: 120%;
   height: auto;
+  border-radius: 0.75em;
 }
 
 .answer {

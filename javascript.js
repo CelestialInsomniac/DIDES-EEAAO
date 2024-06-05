@@ -94,7 +94,7 @@ var image = L.imageOverlay('fragen/quizmap v.1/background/Background_V2.png', bo
 map.fitBounds(bounds);
 
 // Grundausrichtung mittig, Zoom Level 1
-map.setView([750, 750], 3);
+map.setView([770, 750], 3);
 
 // Infomarker
 var customPopupInfo = "<div class='custom-popup'>Everything Everywhere All at Once </br> Kennst du alle Filmreferenzen? </br></br> Wie wird gespielt? </br> </br> Ziehe an der Netzwerkkarte. Wenn du einen der Knotenpunkte antippst, erscheint ein Quizfenster. Errate die richtigen Antworten und sammle so viele Bagels wie möglich! </br> </br> Wenn du die Seite schliesst, verlierst du deine Bagels.</div>";
@@ -132,7 +132,7 @@ function updateMarkerIcon(marker, isCorrect) {
 function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId) {
     var quizContent = `
         <div id="quiz-${questionId}">
-            <img src="${imageUrl}" alt="Quiz Image" style="width: 100%; height: auto;">
+            <img src="${imageUrl}" alt="Quiz Image" style="width: 120%; height: auto; margin-left:-10%; margin-top:-10%; border-top-left-radius: 0.75em; border-top-right-radius: 0.75em;">
             <p>${question}</p>
             <button id="answer1-${questionId}" class="answer">${answers[0]}</button>
             <button id="answer2-${questionId}" class="answer">${answers[1]}</button>
@@ -195,11 +195,13 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
     var correctAnswer = document.querySelectorAll(`#quiz-${questionId} .answer`)[correctAnswerIndex];
 
     if (isCorrect) {
-        selectedAnswer.style.backgroundColor = '#910000';
+        selectedAnswer.style.backgroundColor = '#ffffff';
+        selectedAnswer.style.color = '#000000';
         updateScore(); // Aktualisiere den Score bei richtiger Antwort
     } else {
         selectedAnswer.style.backgroundColor = '#101010';
-        correctAnswer.style.backgroundColor = '#910000';
+        correctAnswer.style.backgroundColor = '#ffffff';
+        correctAnswer.style.color = '#000000';
     }
 
     // Antworten speichern
@@ -366,10 +368,12 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
     var correctAnswer = document.querySelectorAll(`#quiz-${questionId} .answer`)[correctAnswerIndex];
 
     if (storedAnswerId === `answer${correctAnswerIndex + 1}-${questionId}`) {
-        selectedAnswer.style.backgroundColor = '#910000';
+        selectedAnswer.style.backgroundColor = '#ffffff';
+        selectedAnswer.style.color = '#000000';
     } else {
         selectedAnswer.style.backgroundColor = '#101010';
-        correctAnswer.style.backgroundColor = '#910000';
+        correctAnswer.style.backgroundColor = '#ffffff';
+        correctAnswer.style.color = '#000000';
     }
 
     // Alle Knöpfe deaktivieren
@@ -501,7 +505,7 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
 function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId, soundUrl) {
     var quizContent = `
         <div id="quiz-${questionId}">
-            <img src="${imageUrl}" alt="Quiz Image" style="width: 100%; height: auto;">
+            <img src="${imageUrl}" alt="Quiz Image" style="width: 120%; height: auto; margin-left:-10%; margin-top:-10%; border-top-left-radius: 0.75em; border-top-right-radius: 0.75em;">
             <p>${question}</p>
             <button id="answer1-${questionId}" class="answer">${answers[0]}</button>
             <button id="answer2-${questionId}" class="answer">${answers[1]}</button>
@@ -547,7 +551,7 @@ addQuizMarkerSound(818.5, 886.5, 'Welcher Song wurde verwendet und über den ges
 function addQuizMarkerVideo(lat, lng, question, answers, correctAnswerIndex, videoUrl, questionId) {
     var quizContent = `
         <div id="quiz-${questionId}">
-            <video id="video-${questionId}" controls style="width: 100%; height: auto;">
+            <video id="video-${questionId}" controls style="width: 120%; height: auto; margin-left:-10%; margin-top:-10%; border-top-left-radius: 0.75em; border-top-right-radius: 0.75em;">
                 <source src="${videoUrl}" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
