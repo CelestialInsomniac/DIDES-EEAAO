@@ -165,10 +165,16 @@ addQuizMarker(653, 780.5, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data au
 addQuizMarker(803.5, 1062, 'Auf was spielen der Bagel und das Googly-Eye an?', ['Gut und Böse', 'Tag und Nacht', 'Yin und Yang'], 2, 'fragen/quizmap v.1/bilder/Frage4.jpg', 'frage4');
 
 // Frage 5 - Zweite Antwort ist korrekt
-addQuizMarker(1039, 751.5, 'In welchem alternativen Universum lernt Evelyn Kung Fu wie Neo, was eine Anspielung auf eine ähnliche Szene in einem anderen Film darstellt?', ['Crouching Tiger, Hidden Dragon', 'The Matrix', 'Enter the Dragon'], 1, 'fragen/quizmap v.1/bilder/Frage5.png', 'frage5');
+addQuizMarker(1039, 751.5, 'In welchem Film lernt ein Charakter auf ähnliche Weise wie Evelyn Kung Fu?', ['Crouching Tiger, Hidden Dragon', 'The Matrix', 'Enter the Dragon'], 1, 'fragen/quizmap v.1/bilder/Frage5.png', 'frage5');
 
 // Frage 6 - Zweite Antwort ist korrekt
 addQuizMarker(508, 553, 'Auf welchen legendären Kung Fu Meister spielt dieser Charakter an?', ['Zenmeister aus Fist of Zen', 'Pai Mei aus Kill Bill', 'Shifu aus Kung Fu Panda'], 1, 'fragen/quizmap v.1/bilder/Frage6.png', 'frage6');
+
+// Frage 10 - Erste Antwort ist korrekt
+addQuizMarker(935.5, 790, 'In welcher Weise ähnelt der Ansatz von EEAAO in Bezug auf Produktplatzierung dem des Films "Repo Man"?', ['Generische Bezeichnungen für Produkte wie "Soda" und "milk" anstelle von Markennamen.', 'Beide Filme verwenden eine Mischung aus generischen und spezifischen Produktbezeichnungen.', 'Beide Filme haben deutlich erkennbare Markenplatzierungen.'], 0, 'fragen/quizmap v.1/bilder/balm.png', 'frage10');
+
+
+
 
 // Funktion zum Speichern der Antworten und Hinzufügen des zusätzlichen Bildes
 function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId, marker) { //ÄNDERUNG: Marker hinzufügen
@@ -386,7 +392,34 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
             popupContent.appendChild(additionalImage);
         }
     }
+
+            // Zusätzliches Bild im Popup anzeigen, nur für Frage 10
+            if (questionId === 'frage10') {
+                var popupContent = document.querySelector(`#quiz-${questionId}`);
+                var additionalImage = popupContent.querySelector('.additional-image');
+        
+                if (!additionalImage) {
+                    additionalImage = document.createElement('img');
+                    additionalImage.src = 'fragen/quizmap v.1/bilder/Ratatouille.jpg';
+                    additionalImage.classList.add('additional-image');
+                    popupContent.appendChild(additionalImage);
+                }
+            }
+
+        // Zusätzliches Bild im Popup anzeigen, nur für Frage 12
+        if (questionId === 'frage12') {
+            var popupContent = document.querySelector(`#quiz-${questionId}`);
+            var additionalImage = popupContent.querySelector('.additional-image');
+    
+            if (!additionalImage) {
+                additionalImage = document.createElement('img');
+                additionalImage.src = 'fragen/quizmap v.1/bilder/Repo_Man.jpg';
+                additionalImage.classList.add('additional-image');
+                popupContent.appendChild(additionalImage);
+            }
+        }
 }
+
 
 // Funktion Quizmarker mit Sound
 function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, imageUrl, questionId, soundUrl) {
@@ -432,7 +465,6 @@ addQuizMarkerSound(730.5, 687.5, 'Zu welchem Game gehört dieser Soundeffekt?', 
 
 // Frage 11 - Dritte Antwort ist korrekt
 addQuizMarkerSound(818.5, 886.5, 'Welcher Song wurde verwendet und über den gesamten Film verteilt immer wieder abgespielt?', ['Inside Out von Eve 6', 'If You Could Only See von Tonic', 'Absolutely (Story of a Girl) von Nine Days'], 2, 'fragen/quizmap v.1/bilder/EEAAO_Soundtracks2.jpg', 'frage11', 'fragen/quizmap v.1/audio/Nine Days - Absolutely (Story of a Girl).mp3');
-
 
 
 // Funktion Quizmarker mit Video
@@ -494,68 +526,5 @@ addQuizMarkerVideo(1002.7, 966.5, 'In welchem Film gibt es eine solche Szene, in
 // Frage 9 - Dritte Antwort ist korrekt
 addQuizMarkerVideo(687, 527, 'Welche Musik-Ikone wird hier referenziert?', ['Madonna', 'Prince', 'Elvis Presley'], 2, 'fragen/quizmap v.1/video/Jobu Tupaki.mov', 'frage9');
 
-
-
-
-
-
-
-function addSoundQuizMarker(lat, lng, question, soundUrls, correctAnswerIndex, questionId) {
-    var quizContent = `
-        <div id="quiz-${questionId}">
-            <p>${question}</p>
-            <div id="sound-buttons-${questionId}">
-                <button class="sound answer" data-sound="${soundUrls[0]}">Sound 1 abspielen</button>
-                <button class="sound answer" data-sound="${soundUrls[1]}">Sound 2 abspielen</button>
-                <button class="sound answer" data-sound="${soundUrls[2]}">Sound 3 abspielen</button>
-            </div>
-            <button id="confirm-${questionId}" class="confirm">Antwort bestätigen</button>
-        </div>
-    `;
-
-    var marker = L.marker([lat, lng], { icon: ring }).addTo(map)
-        .bindPopup(quizContent, {
-            className: 'custom-popup'
-        });
-
-    marker.on('popupopen', function () {
-        if (sessionStorage.getItem('quiz-' + questionId) !== null) {
-            displayStoredAnswer(questionId, correctAnswerIndex);
-        } else {
-            // Event-Listener für Soundbuttons (Antworten) hinzufügen
-            var soundButtons = document.querySelectorAll(`#quiz-${questionId} .sound`);
-            soundButtons.forEach(function (button) {
-                button.addEventListener('click', function () {
-                    selectAnswer(button, questionId);
-                });
-            });
-
-            // Event-Listener für Bestätigungsbutton hinzufügen
-            document.getElementById(`confirm-${questionId}`).addEventListener('click', function () {
-                var selectedSoundButton = document.querySelector(`#quiz-${questionId} .sound.selected`);
-                if (selectedSoundButton) {
-                    var soundUrl = selectedSoundButton.getAttribute('data-sound');
-                    playSound(soundUrl);
-                }
-                handleAnswer(questionId, correctAnswerIndex, marker);
-            });
-        }
-    });
-}
-
-// Funktion zur Auswahl einer Antwort
-function selectAnswer(selectedButton, questionId) {
-    var soundButtons = document.querySelectorAll(`#quiz-${questionId} .sound`);
-    soundButtons.forEach(function (button) {
-        button.classList.remove('selected');
-    });
-    selectedButton.classList.add('selected');
-}
-
-// Funktion zum Abspielen des ausgewählten Sounds
-function playSound(soundUrl) {
-    var audio = new Audio(soundUrl);
-    audio.play();
-    audio.volume = 0.3;
-}
-
+// Frage 12 - Zweite Antwort ist korrekt
+addQuizMarkerVideo(866, 620, 'Auf welchen Film spielt diese Szene an?', ['Das Dschungelbuch', 'Ratatouille', 'Flutsch und weg'], 1, 'fragen/quizmap v.1/video/EEAAO_Racacoonie.mov', 'frage12');
