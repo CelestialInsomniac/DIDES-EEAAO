@@ -119,7 +119,6 @@ function updateScore() {
     scoreElement.innerText = score;
 }
 
-//ÄNDERUNG
 // Funktion zum Aktualisieren des Marker-Icons je nach Antwort
 function updateMarkerIcon(marker, isCorrect) {
     if (isCorrect) {
@@ -191,7 +190,7 @@ addQuizMarker(935.5, 790, 'In welcher Weise ähnelt der Ansatz von EEAAO in Bezu
 
 
 // Funktion zum Speichern der Antworten und Hinzufügen des zusätzlichen Bildes
-function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId, marker) { //ÄNDERUNG: Marker hinzufügen
+function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionId, marker) {
     var selectedAnswer = document.getElementById(selectedAnswerId);
     var correctAnswer = document.querySelectorAll(`#quiz-${questionId} .answer`)[correctAnswerIndex];
 
@@ -293,7 +292,6 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
         }
     }
 
-    //ÄNDERUNG
     // Update the marker icon after answering the question
     updateMarkerIcon(marker, isCorrect);
 }
