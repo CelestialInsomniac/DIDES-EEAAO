@@ -29,6 +29,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Googly-Eye
+const pupil = document.getElementById('pupil');
+
+window.addEventListener('deviceorientation', (event) => {
+  const x = event.beta; // Neigung von vorne nach hinten
+  const y = event.gamma; // Neigung von links nach rechts
+
+  const maxX = 15; // maximale Neigung nach vorne/hinten
+  const maxY = 15; // maximale Neigung nach links/rechts
+
+  const pupilX = (y / maxY) * 20; // Bewegung des Pupille in der X-Richtung
+  const pupilY = (x / maxX) * 20; // Bewegung des Pupille in der Y-Richtung
+
+  pupil.style.transform = `translate(${pupilX - 50}%, ${pupilY - 50}%)`;
+});
+
 
 // LEAFLET JS
 var map = L.map('map', {
