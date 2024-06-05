@@ -391,8 +391,8 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
         }
     }
 
-    // Zusätzliches Bild im Popup anzeigen, nur für Frage 10
-    if (questionId === 'frage10') {
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 12
+    if (questionId === 'frage12') {
         var popupContent = document.querySelector(`#quiz-${questionId}`);
         var additionalImage = popupContent.querySelector('.additional-image');
 
@@ -404,8 +404,8 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
         }
     }
 
-    // Zusätzliches Bild im Popup anzeigen, nur für Frage 12
-    if (questionId === 'frage12') {
+    // Zusätzliches Bild im Popup anzeigen, nur für Frage 10
+    if (questionId === 'frage10') {
         var popupContent = document.querySelector(`#quiz-${questionId}`);
         var additionalImage = popupContent.querySelector('.additional-image');
 
