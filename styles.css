@@ -129,6 +129,10 @@ body {
 
 }
 
+.dasQuiz {
+  font-size: 3em;
+}
+
 .desktop {
   display: block;
 }
