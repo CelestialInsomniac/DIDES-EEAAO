@@ -166,7 +166,7 @@ function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl
         // Überprüfen, ob das zusätzliche Bild bereits hinzugefügt wurde
         if (questionId === 'frage2' && !additionalImage && sessionStorage.getItem('additionalImageAdded-' + questionId) === 'true') {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/Data aus Die Goonies.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Data aus Die Goonies.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
         }
@@ -220,7 +220,7 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/Data aus Die Goonies.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Data aus Die Goonies.png';
 
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
@@ -237,7 +237,7 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/SpaceOdyssey.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/SpaceOdyssey.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
 
@@ -269,7 +269,7 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/The Matrix.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/The Matrix.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
 
@@ -301,7 +301,7 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/Paprika.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Paprika.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
 
@@ -317,7 +317,7 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/Elvis.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Elvis.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
 
@@ -333,7 +333,7 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/Repo_Man.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Repo_Man.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
 
@@ -349,7 +349,7 @@ function handleAnswer(selectedAnswerId, isCorrect, correctAnswerIndex, questionI
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/Ratatouille.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Ratatouille.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
 
@@ -389,7 +389,7 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/Data aus Die Goonies.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Data aus Die Goonies.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
         }
@@ -402,7 +402,7 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/SpaceOdyssey.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/SpaceOdyssey.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
         }
@@ -428,7 +428,7 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/The Matrix.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/The Matrix.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
         }
@@ -454,7 +454,7 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/Paprika.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Paprika.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
         }
@@ -467,7 +467,7 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/Elvis.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Elvis.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
         }
@@ -480,7 +480,7 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/Ratatouille.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Ratatouille.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
         }
@@ -493,7 +493,7 @@ function displayStoredAnswer(questionId, correctAnswerIndex) {
 
         if (!additionalImage) {
             additionalImage = document.createElement('img');
-            additionalImage.src = 'fragen/quizmap v.1/bilder/Repo_Man.jpg';
+            additionalImage.src = 'fragen/quizmap v.1/bilder/Repo_Man.png';
             additionalImage.classList.add('additional-image');
             popupContent.appendChild(additionalImage);
         }
