@@ -58,7 +58,6 @@ var map = L.map('map', {
     minZoom: 1,
 });
 
-
 var infoIcon = L.icon({
     iconUrl: 'fragen/quizmap v.1/icons/icon_infopoint.png',
     iconSize: [60, 60],
@@ -186,7 +185,7 @@ addQuizMarker(1039, 751.5, 'In welchem Film lernt ein Charakter auf ähnliche We
 addQuizMarker(508, 553, 'Auf welchen legendären Kung Fu Meister spielt dieser Charakter an?', ['Zenmeister aus Fist of Zen', 'Pai Mei aus Kill Bill', 'Shifu aus Kung Fu Panda'], 1, 'fragen/quizmap v.1/bilder/Frage6.png', 'frage6');
 
 // Frage 10 - Erste Antwort ist korrekt
-addQuizMarker(935.5, 790, 'In welcher Weise ähnelt der Ansatz von EEAAO in Bezug auf Produktplatzierung dem des Films "Repo Man"?', ['Generische Bezeichnungen für Produkte wie "Soda" und "milk" anstelle von Markennamen.', 'Beide Filme verwenden eine Mischung aus generischen und spezifischen Produktbezeichnungen.', 'Beide Filme haben deutlich erkennbare Markenplatzierungen.'], 0, 'fragen/quizmap v.1/bilder/balm.png', 'frage10');
+addQuizMarker(935.5, 790, 'In welcher Weise ähnelt der Ansatz von EEAAO in Bezug auf Produktplatzierung dem des Films "Repo Man"?', ['Generische Bezeichnungen für Produkte anstelle von Markennamen.', 'Beide Filme verwenden Fantasie-Produktbezeichnungen.', 'Beide Filme haben klar erkennbare Markenplatzierungen.'], 0, 'fragen/quizmap v.1/bilder/balm.png', 'frage10');
 
 
 // Funktion zum Speichern der Antworten und Hinzufügen des zusätzlichen Bildes
