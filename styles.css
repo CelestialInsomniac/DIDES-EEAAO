@@ -131,6 +131,9 @@ body {
 
 .dasQuiz {
   font-size: 3em;
+  margin-bottom: 0.2em;
+  font-weight: 100;
+  font-style: normal;
 }
 
 .desktop {
@@ -158,6 +161,23 @@ body {
     width: 100px;
     height: 100px;
   }
+}
+
+.starten {
+  background-color: transparent;
+  border-radius: 0.75em;
+  font-size: 1.3em;
+  font-weight: 100;
+  font-style: normal;
+  color: white;
+  padding: 0.625em 0.938em;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  margin: 0.5em 0.125em;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
 /* Googly-Eye */
