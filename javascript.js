@@ -177,7 +177,7 @@ function addQuizMarker(lat, lng, question, answers, correctAnswerIndex, imageUrl
 addQuizMarker(653, 780.5, 'Auf wen spielt Waymonds Gürteltasche an?', ['Data aus Die Goonies', 'Peter aus Ghostbusters', 'Penny aus Inspector Gadget'], 0, 'fragen/quizmap v.1/bilder/Frage2.png', 'frage2');
 
 // Frage 4 - Dritte Antwort ist korrekt
-addQuizMarker(803.5, 1062, 'Auf was spielen der Bagel und das Googly-Eye an?', ['Gut und Böse', 'Tag und Nacht', 'Yin und Yang'], 2, 'fragen/quizmap v.1/bilder/Frage4.jpg', 'frage4');
+addQuizMarker(803.5, 1062, 'Auf was spielen der Bagel und das Googly-Eye an?', ['Gut und Böse', 'Tag und Nacht', 'Yin und Yang'], 2, 'fragen/quizmap v.1/bilder/Frage4.png', 'frage4');
 
 // Frage 5 - Zweite Antwort ist korrekt
 addQuizMarker(1039, 751.5, 'In welchem Film lernt ein Charakter auf ähnliche Weise wie Evelyn Kung Fu?', ['Crouching Tiger, Hidden Dragon', 'The Matrix', 'Enter the Dragon'], 1, 'fragen/quizmap v.1/bilder/Frage5.png', 'frage5');
@@ -544,7 +544,7 @@ function addQuizMarkerSound(lat, lng, question, answers, correctAnswerIndex, ima
 addQuizMarkerSound(730.5, 687.5, 'Zu welchem Game gehört dieser Soundeffekt?', ['Metroid', 'Super Smash Bros.', 'Metal Gear Solid'], 1, 'fragen/quizmap v.1/bilder/Frage1.png', 'frage1', 'fragen/quizmap v.1/audio/SuperSmashBros.mp3');
 
 // Frage 11 - Dritte Antwort ist korrekt
-addQuizMarkerSound(818.5, 886.5, 'Welcher Song wurde verwendet und über den gesamten Film verteilt immer wieder abgespielt?', ['Inside Out von Eve 6', 'If You Could Only See von Tonic', 'Absolutely (Story of a Girl) von Nine Days'], 2, 'fragen/quizmap v.1/bilder/EEAAO_Soundtracks2.jpg', 'frage11', 'fragen/quizmap v.1/audio/Nine Days - Absolutely (Story of a Girl).mp3');
+addQuizMarkerSound(818.5, 886.5, 'Welcher Song wurde verwendet und über den gesamten Film verteilt immer wieder abgespielt?', ['Inside Out von Eve 6', 'If You Could Only See von Tonic', 'Absolutely (Story of a Girl) von Nine Days'], 2, 'fragen/quizmap v.1/bilder/EEAAO_Soundtracks2.png', 'frage11', 'fragen/quizmap v.1/audio/Nine Days - Absolutely (Story of a Girl).mp3');
 
 
 // Funktion Quizmarker mit Video
