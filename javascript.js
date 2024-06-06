@@ -61,30 +61,30 @@ var map = L.map('map', {
 
 var infoIcon = L.icon({
     iconUrl: 'fragen/quizmap v.1/icons/icon_infopoint.png',
-    iconSize: [120, 120],
-    iconAnchor: [60, 60],
-    popupAnchor: [-3, -76],
+    iconSize: [60, 60],
+    iconAnchor: [30, 30],
+    popupAnchor: [0, -40],
 });
 
 var ring = L.icon({
     iconUrl: 'fragen/quizmap v.1/icons/icon_ring.png',
-    iconSize: [120, 120],
-    iconAnchor: [60, 60],
-    popupAnchor: [-3, -76],
+    iconSize: [60, 60],
+    iconAnchor: [30, 30],
+    popupAnchor: [0, -40],
 });
 
 var completedIcon = L.icon({
     iconUrl: 'fragen/quizmap v.1/icons/icon_ring_cleared.png',
-    iconSize: [120, 120],
-    iconAnchor: [60, 60],
-    popupAnchor: [-3, -76],
+    iconSize: [60, 60],
+    iconAnchor: [30, 30],
+    popupAnchor: [0, -40],
 });
 
 var wrongIcon = L.icon({
     iconUrl: 'fragen/quizmap v.1/icons/icon_ring_wrong.png',
-    iconSize: [120, 120],
-    iconAnchor: [60, 60],
-    popupAnchor: [-3, -76],
+    iconSize: [60, 60],
+    iconAnchor: [30, 30],
+    popupAnchor: [0, -40],
 });
 
 var bounds = [[0, 0], [1500, 1500]];
