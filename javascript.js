@@ -93,8 +93,8 @@ var image = L.imageOverlay('fragen/quizmap v.1/background/Background.png', bound
 // Fit the map to the bounds of the image
 map.fitBounds(bounds);
 
-// Grundausrichtung mittig, Zoom Level 1
-map.setView([770, 750], 3);
+// Grundausrichtung mittig, Zoom Level 2
+map.setView([770, 750], 2);
 
 // Infomarker
 var customPopupInfo = "<div class='custom-popup'>Everything Everywhere All at Once </br> Kennst du alle Filmreferenzen? </br></br> Wie wird gespielt? </br> </br> Ziehe an der Netzwerkkarte. Wenn du einen der Knotenpunkte antippst, erscheint ein Quizfenster. Errate die richtigen Antworten und sammle so viele Bagels wie möglich! </br> </br> Wenn du die Seite schliesst, verlierst du deine Bagels.</div>";
